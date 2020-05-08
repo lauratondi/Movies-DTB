@@ -1,6 +1,18 @@
-import { SEARCH_MOVIES, GET_MOVIE, SET_LOADING } from '../types';
+import {
+  SEARCH_MOVIES,
+  GET_MOVIE,
+  SET_LOADING,
+  MOVIES_ERROR,
+} from '../actions/types';
 
-export default (state, action) => {
+const initialState = {
+  movies: [],
+  movie: {},
+  loading: false,
+  error: null,
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_MOVIES:
       return {
@@ -18,6 +30,11 @@ export default (state, action) => {
       return {
         ...state,
         loading: true,
+      };
+    case MOVIES_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;

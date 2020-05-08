@@ -1,14 +1,18 @@
-import React, { useState, useContext } from 'react';
-import MovieContext from '../context/movie/movieContext';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { searchMovies } from '../../actions/movieActions';
 
-const Search = () => {
-  const movieContext = useContext(MovieContext);
+const Search = ({ searchMovies }) => {
+  useEffect(() => {
+    searchMovies();
+  }, [searchMovies]);
 
   const [title, setTitle] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    movieContext.searchMovies(title);
+    searchMovies(title);
     setTitle('');
   };
 
@@ -34,4 +38,8 @@ const Search = () => {
   );
 };
 
-export default Search;
+Search.proptype = {
+  searchMovies: PropTypes.func.isRequired,
+};
+
+export default connect(null, { searchMovies })(Search);

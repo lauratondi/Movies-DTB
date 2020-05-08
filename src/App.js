@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import Landing from './components/Landing';
-import MovieState from './context/movie/MovieState';
+import Navbar from './components/layout/Navbar';
+import Landing from './components/pages/Landing';
+import store from './store';
+import { Provider } from 'react-redux';
 
 const App = () => {
   return (
-    <MovieState>
+    <Provider store={store}>
       <div className='App'>
         <Navbar />
         <Landing />
       </div>
-    </MovieState>
+    </Provider>
   );
 };
 
