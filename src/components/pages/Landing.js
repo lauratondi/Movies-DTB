@@ -7,7 +7,7 @@ const Landing = () => {
     <div className='landing'>
       <h1>Search for your favourite movies</h1>
       <Search />
-      <Movies movies={Movies.search} />
+      <Movies />
     </div>
   );
 };

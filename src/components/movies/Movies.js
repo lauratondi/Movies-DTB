@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import MovieItem from './MovieItem';
 // import { getMovie } from '../../actions/movieActions';
-// import Spinner from '../layout/Spinner';
+import Spinner from '../layout/Spinner';
 
 import PropTypes from 'prop-types';
 
@@ -13,20 +13,20 @@ const Movies = ({ movie: { movies, loading } }) => {
   // }, []);
 
   if (loading) {
-    return <div>Loading..</div>;
+    return (
+      <Fragment>
+        <Spinner />
+      </Fragment>
+    );
   } else {
     return (
-      <div className='container'>
-        <div>
-          {movies.length > 0 ? (
-            movies.map((movie) => (
-              <MovieItem key={movie.imdbID} movie={movie.title} />
-            ))
-          ) : (
-            <h2> ...</h2>
-          )}
-        </div>
-      </div>
+      <Fragment>
+        {movies.length > 0 ? (
+          movies.map((movie) => <MovieItem key={movie.imdbID} movie={movie} />)
+        ) : (
+          <h2>...</h2>
+        )}
+      </Fragment>
     );
   }
 };

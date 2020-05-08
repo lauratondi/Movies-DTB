@@ -9,7 +9,7 @@ const initialState = {
   movies: [],
   movie: {},
   loading: false,
-  error: null,
+  // error: null,
 };
 
 export default (state = initialState, action) => {

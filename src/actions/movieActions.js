@@ -23,12 +23,12 @@ export const getMovie = (title) => async (dispatch) => {
   setLoading();
 
   const res = await axios.get(
-    `http://www.omdbapi.com/?t=${title}&apikey=4bd34599&`
+    `http://www.omdbapi.com/?t=${title}&apikey=4bd34599&plot=full`
   );
 
   dispatch({
     type: GET_MOVIE,
-    payload: res.data.item,
+    payload: res.data,
   });
 };
 
