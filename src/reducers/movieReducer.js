@@ -1,20 +1,27 @@
 import {
   SEARCH_MOVIES,
+  GET_MOVIES,
   GET_MOVIE,
   SET_LOADING,
   MOVIES_ERROR,
 } from '../actions/types';
 
 const initialState = {
+  text: '',
   movies: [],
-  movie: {},
   loading: false,
-  // error: null,
+  movie: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_MOVIES:
+      return {
+        ...state,
+        text: action.payload,
+        loading: false,
+      };
+    case GET_MOVIES:
       return {
         ...state,
         movies: action.payload,

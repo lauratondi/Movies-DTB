@@ -1,29 +1,38 @@
 import axios from 'axios';
-import { SEARCH_MOVIES, SET_LOADING, GET_MOVIE } from './types';
+import { APIKey } from '../APIKey';
+import { SEARCH_MOVIES, SET_LOADING, GET_MOVIE, GET_MOVIES } from './types';
 
-// Search movies
-export const searchMovies = (title) => async (dispatch) => {
+// SEARCH MOVIES
+export const searchMovies = (text) => async (dispatch) => {
+  dispatch({
+    type: SEARCH_MOVIES,
+    payload: text,
+  });
+};
+
+// GET MOVIES
+export const getMovies = (text) => async (dispatch) => {
   setLoading(true);
 
   const res = await axios.get(
-    `http://www.omdbapi.com/?s=${title}&apikey=4bd34599&`
+    `http://www.omdbapi.com/?s=${text}&apikey=${APIKey}`
   );
 
   console.log(res.data);
 
   dispatch({
-    type: SEARCH_MOVIES,
+    type: GET_MOVIES,
     payload: res.data,
     loading: false,
   });
 };
 
 // GET MOVIE
-export const getMovie = (title) => async (dispatch) => {
+export const getMovie = (id) => async (dispatch) => {
   setLoading();
 
   const res = await axios.get(
-    `http://www.omdbapi.com/?t=${title}&apikey=4bd34599&plot=full`
+    `http://www.omdbapi.com/?i=${id}&apikey=${APIKey}&plot=full`
   );
 
   dispatch({

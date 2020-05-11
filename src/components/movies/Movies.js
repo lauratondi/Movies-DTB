@@ -6,38 +6,25 @@ import Spinner from '../layout/Spinner';
 
 import PropTypes from 'prop-types';
 
-const Movies = ({ movie: { movies, loading } }) => {
-  // useEffect(() => {
-  //   getMovie();
-  //   // eslint-disable-next-line
-  // }, []);
+const Movies = ({ movies }) => {
+  let content = '';
 
-  if (loading) {
-    return (
-      <Fragment>
-        <Spinner />
-      </Fragment>
-    );
-  } else {
-    return (
-      <Fragment>
-        {movies.length > 0 ? (
-          movies.map((movie) => <MovieItem key={movie.imdbID} movie={movie} />)
-        ) : (
-          <h2>...</h2>
-        )}
-      </Fragment>
-    );
-  }
+  content =
+    movies.Response === 'True'
+      ? movies.Search.map((movie, index) => (
+          <MovieItem key={index} movie={movie} />
+        ))
+      : null;
+  return <div className='row'>{content}</div>;
 };
 
 Movies.propTypes = {
-  movie: PropTypes.object.isRequired,
-  // getMovie: PropTypes.func.isRequired,
+  movies: PropTypes.array.isRequired,
+  // loading: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
-  movie: state.movie,
+  movies: state.movies.movies,
 });
 
-export default connect(mapStateToProps, {})(Movies);
+export default connect(mapStateToProps)(Movies);

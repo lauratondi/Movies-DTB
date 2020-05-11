@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
@@ -16,7 +16,7 @@ const App = () => {
           <div className='container'>
             <Switch>
               <Route exact path='/' component={Landing} />
-              <Route exact path='/movie' component={Movie} />
+              <Route exact path='/movie/:id' component={Movie} />
             </Switch>
           </div>
         </div>

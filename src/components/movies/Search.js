@@ -1,31 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { searchMovies } from '../../actions/movieActions';
+import {
+  searchMovies,
+  getMovies,
+  setLoading,
+} from '../../actions/movieActions';
 
-const Search = ({ searchMovies }) => {
+const Search = ({ searchMovies, getMovies, setLoading }) => {
   useEffect(() => {
     searchMovies();
-  }, [searchMovies]);
+    // eslint-disable-next-line
+  }, []);
 
-  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-    searchMovies(title);
-    setTitle('');
+    getMovies(text);
+    setLoading();
+    setText('');
   };
 
-  const onChange = (e) => setTitle(e.target.value);
+  const onChange = (e) => setText(e.target.value);
 
   return (
     <div>
       <form onSubmit={onSubmit} className='form'>
         <input
           type='text'
-          name='title'
+          name='text'
           placeholder='Search for Movies...'
-          value={title}
+          value={text}
           onChange={onChange}
         />
         <input
@@ -40,6 +46,16 @@ const Search = ({ searchMovies }) => {
 
 Search.proptype = {
   searchMovies: PropTypes.func.isRequired,
+  getMovies: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
 };
 
-export default connect(null, { searchMovies })(Search);
+// const mapStateToProps = (state) => ({
+//   text: state.movie.text,
+// });
+
+export default connect(null, {
+  searchMovies,
+  getMovies,
+  setLoading,
+})(Search);

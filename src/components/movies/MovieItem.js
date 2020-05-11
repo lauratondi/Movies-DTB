@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-const MovieItem = ({ movie: { poster, title, year } }) => {
+const MovieItem = ({ movie }) => {
   return (
     <div>
       <img
-        src={poster}
+        src={movie.Poster}
         alt=''
         className='round-img'
         style={{ width: '60px' }}
       />
-      <h2>{title}</h2>
-      <h3>{year}</h3>
+      <h2>{movie.Title}</h2>
+      <h3>{movie.Year}</h3>
 
       <div>
-        <Link to={'/movie'}>More</Link>
+        <Link to={'/movie/' + movie.imdbID}>More</Link>
       </div>
     </div>
   );
