@@ -17,7 +17,7 @@ const MovieItem = ({ movie }) => {
       <h3>{movie.Year}</h3>
 
       <div>
-        <Link to={'/movie/' + movie.imdbID}>More</Link>
+        <Link to={`/movie/${movie.imdbID}`}>More</Link>
       </div>
     </div>
   );

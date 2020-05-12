@@ -6,9 +6,9 @@ import Spinner from '../layout/Spinner';
 
 import PropTypes from 'prop-types';
 
-const Movie = ({ getMovie, setLoading, loading, movie }) => {
+const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
   useEffect(() => {
-    getMovie();
+    getMovie(match.params.id);
     setLoading();
     // eslint-disable-next-line
   }, []);
@@ -25,9 +25,10 @@ const Movie = ({ getMovie, setLoading, loading, movie }) => {
 };
 
 Movie.propTypes = {
-  movie: PropTypes.array.isRequired,
+  movie: PropTypes.object.isRequired,
   loading: PropTypes.bool,
   getMovie: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({

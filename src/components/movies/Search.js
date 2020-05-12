@@ -50,11 +50,11 @@ Search.proptype = {
   setLoading: PropTypes.func.isRequired,
 };
 
-// const mapStateToProps = (state) => ({
-//   text: state.movie.text,
-// });
+const mapStateToProps = (state) => ({
+  text: state.movies.text,
+});
 
-export default connect(null, {
+export default connect(mapStateToProps, {
   searchMovies,
   getMovies,
   setLoading,

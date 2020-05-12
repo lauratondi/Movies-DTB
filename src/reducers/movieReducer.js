@@ -10,7 +10,7 @@ const initialState = {
   text: '',
   movies: [],
   loading: false,
-  movie: [],
+  movie: {},
 };
 
 export default (state = initialState, action) => {
