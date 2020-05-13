@@ -4,13 +4,14 @@ import {
   GET_MOVIE,
   SET_LOADING,
   MOVIES_ERROR,
+  CLEAR_MOVIES,
 } from '../actions/types';
 
 const initialState = {
   text: '',
-  movies: [],
-  loading: false,
+  movies: {},
   movie: {},
+  loading: false,
 };
 
 export default (state = initialState, action) => {
@@ -31,6 +32,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         movie: action.payload,
+        loading: false,
+      };
+    case CLEAR_MOVIES:
+      return {
+        ...state,
+        movies: {},
         loading: false,
       };
     case SET_LOADING:

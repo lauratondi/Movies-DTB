@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import Link from 'react-dom';
 import { connect } from 'react-redux';
 // import MovieItem from './MovieItem';
 import { getMovie, setLoading } from '../../actions/movieActions';
@@ -16,11 +17,14 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
   if (loading) {
     return <Spinner />;
   } else {
-    return (
+    return movie.Response === 'True' ? (
       <Fragment>
         {movie.Title} : {movie.Plot}
+        <button>
+          <a href='/'>Go Back to Search</a>
+        </button>
       </Fragment>
-    );
+    ) : null;
   }
 };
 

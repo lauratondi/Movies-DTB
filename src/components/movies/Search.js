@@ -5,11 +5,13 @@ import {
   searchMovies,
   getMovies,
   setLoading,
+  clearMovies,
 } from '../../actions/movieActions';
 
-const Search = ({ searchMovies, getMovies, setLoading }) => {
+const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
   useEffect(() => {
     searchMovies();
+    clearMovies();
     // eslint-disable-next-line
   }, []);
 
@@ -17,8 +19,8 @@ const Search = ({ searchMovies, getMovies, setLoading }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    getMovies(text);
     setLoading();
+    getMovies(text);
     setText('');
   };
 
@@ -40,6 +42,8 @@ const Search = ({ searchMovies, getMovies, setLoading }) => {
           className='btn btn-dark btn-block'
         />
       </form>
+
+      <button onClick={clearMovies}>Clear Search</button>
     </div>
   );
 };
@@ -48,6 +52,8 @@ Search.proptype = {
   searchMovies: PropTypes.func.isRequired,
   getMovies: PropTypes.func.isRequired,
   setLoading: PropTypes.func.isRequired,
+  showClear: PropTypes.bool.isRequired,
+  clearMovies: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -58,4 +64,5 @@ export default connect(mapStateToProps, {
   searchMovies,
   getMovies,
   setLoading,
+  clearMovies,
 })(Search);

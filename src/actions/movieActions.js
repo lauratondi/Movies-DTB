@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { APIKey } from '../APIKey';
-import { SEARCH_MOVIES, SET_LOADING, GET_MOVIE, GET_MOVIES } from './types';
+import {
+  SEARCH_MOVIES,
+  SET_LOADING,
+  GET_MOVIES,
+  GET_MOVIE,
+  CLEAR_MOVIES,
+} from './types';
 
 // SEARCH MOVIES
 export const searchMovies = (text) => async (dispatch) => {
@@ -42,4 +48,15 @@ export const getMovie = (id) => async (dispatch) => {
 };
 
 // Set Loading
-export const setLoading = () => async (dispatch) => ({ type: SET_LOADING });
+export const setLoading = () => async (dispatch) => {
+  dispatch({
+    type: SET_LOADING,
+  });
+};
+
+// CLEAR MOVIES
+export const clearMovies = () => async (dispatch) => {
+  dispatch({
+    type: CLEAR_MOVIES,
+  });
+};

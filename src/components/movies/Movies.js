@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import MovieItem from './MovieItem';
 import Spinner from '../layout/Spinner';
-
 import PropTypes from 'prop-types';
 
 const Movies = ({ movies, loading }) => {
@@ -18,7 +17,7 @@ const Movies = ({ movies, loading }) => {
 };
 
 Movies.propTypes = {
-  movies: PropTypes.array.isRequired,
+  movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,
 };
 
