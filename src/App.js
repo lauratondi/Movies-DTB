@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
+import Menu from './components/layout/Menu';
 import Landing from './components/pages/Landing';
 import Movie from './components/movies/Movie';
 import store from './store';

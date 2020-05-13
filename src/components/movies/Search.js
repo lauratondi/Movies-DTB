@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
@@ -27,20 +27,21 @@ const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
   const onChange = (e) => setText(e.target.value);
 
   return (
-    <div>
+    <div className='search'>
+      <h1>Search for your favourite movies</h1>
+
       <form onSubmit={onSubmit} className='form'>
+        <i class='fas fa-search fa-2x'></i>
         <input
+          className='formInput'
           type='text'
           name='text'
-          placeholder='Search for Movies...'
+          placeholder='Search Movies...'
           value={text}
           onChange={onChange}
         />
-        <input
-          type='submit'
-          value='Search'
-          className='btn btn-dark btn-block'
-        />
+
+        <input type='submit' value='Search' />
       </form>
 
       <button onClick={clearMovies}>Clear Search</button>

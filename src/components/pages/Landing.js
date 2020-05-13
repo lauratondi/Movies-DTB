@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Search from '../movies/Search';
+import Menu from '../layout/Menu';
 import Movies from '../movies/Movies';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux';
@@ -7,11 +8,12 @@ import PropTypes from 'prop-types';
 
 const Landing = ({ loading }) => {
   return (
-    <div className='landing'>
-      <h1>Search for your favourite movies</h1>
+    <Fragment>
+      <Menu />
+
       <Search />
       {loading ? <Spinner /> : <Movies />}
-    </div>
+    </Fragment>
   );
 };
 

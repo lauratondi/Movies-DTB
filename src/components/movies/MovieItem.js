@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 // import { getMovie } from '../../actions/movieActions';
 
@@ -16,9 +16,7 @@ const MovieItem = ({ movie }) => {
       <h2>{movie.Title}</h2>
       <h3>{movie.Year}</h3>
 
-      <div>
-        <Link to={`/movie/${movie.imdbID}`}>More</Link>
-      </div>
+      <Link to={`/movie/${movie.imdbID}`}>More</Link>
     </div>
   );
 };
