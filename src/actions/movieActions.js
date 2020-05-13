@@ -5,8 +5,10 @@ import {
   SET_LOADING,
   GET_MOVIES,
   GET_MOVIE,
+  GET_POPULARITY,
   CLEAR_MOVIES,
 } from './types';
+// api_key=${API_KEY}
 
 // SEARCH MOVIES
 export const searchMovies = (text) => async (dispatch) => {
@@ -46,6 +48,22 @@ export const getMovie = (id) => async (dispatch) => {
     payload: res.data,
   });
 };
+
+// GET MOVIES BY POPULARITY
+export const getPopularity = () => async (dispatch) => {
+  setLoading();
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=f099db39d3292a1331aa4316b07e89d3&sort_by=popularity?`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_POPULARITY,
+    payload: res.data,
+  });
+};
+//
 
 // Set Loading
 export const setLoading = () => async (dispatch) => {

@@ -10,7 +10,6 @@ const Landing = ({ loading }) => {
   return (
     <Fragment>
       <Menu />
-
       <Search />
       {loading ? <Spinner /> : <Movies />}
     </Fragment>

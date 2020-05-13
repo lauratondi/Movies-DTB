@@ -2,6 +2,7 @@ import {
   SEARCH_MOVIES,
   GET_MOVIES,
   GET_MOVIE,
+  GET_POPULARITY,
   SET_LOADING,
   MOVIES_ERROR,
   CLEAR_MOVIES,
@@ -32,6 +33,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         movie: action.payload,
+        loading: false,
+      };
+    case GET_POPULARITY:
+      return {
+        ...state,
+        movies: action.payload,
         loading: false,
       };
     case CLEAR_MOVIES:

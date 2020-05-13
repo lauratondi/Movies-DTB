@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import Link from 'react-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import MovieItem from './MovieItem';
 import { getMovie, setLoading } from '../../actions/movieActions';
@@ -21,7 +21,7 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
       <Fragment>
         {movie.Title} : {movie.Plot}
         <button>
-          <a href='/'>Go Back to Search</a>
+          <Link to='/'>Go Back to Search</Link>
         </button>
       </Fragment>
     ) : null;

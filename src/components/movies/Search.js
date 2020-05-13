@@ -7,6 +7,7 @@ import {
   setLoading,
   clearMovies,
 } from '../../actions/movieActions';
+// import Movies from '../movies/Movies';
 
 const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
   useEffect(() => {
@@ -31,7 +32,7 @@ const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
       <h1>Search for your favourite movies</h1>
 
       <form onSubmit={onSubmit} className='form'>
-        <i class='fas fa-search fa-2x'></i>
+        <i className='fas fa-search fa-2x'></i>
         <input
           className='formInput'
           type='text'
