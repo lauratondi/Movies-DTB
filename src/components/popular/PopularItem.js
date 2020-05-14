@@ -15,8 +15,9 @@ const PopularItem = ({ movie }) => {
       />
       <h2>{movie.title}</h2>
       <h3>{movie.release_date}</h3>
+      <h3>{movie.id}</h3>
 
-      <Link to={`/populars/${movie._id}`}>More</Link>
+      <Link to={`/populars/${movie.id}`}>More</Link>
     </div>
   );
 };

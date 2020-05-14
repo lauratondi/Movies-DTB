@@ -53,7 +53,7 @@ export const getMovie = (id) => async (dispatch) => {
 // SEARCH MOVIES BY POPULARITY
 export const searchPopulars = () => async (dispatch) => {
   const res = await axios.get(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity?`
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
   );
 
   console.log(res.data);
@@ -68,7 +68,7 @@ export const searchPopulars = () => async (dispatch) => {
 export const getPopulars = () => async (dispatch) => {
   setLoading(true);
   const res = await axios.get(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity?`
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
   );
 
   console.log(res.data);
@@ -81,10 +81,10 @@ export const getPopulars = () => async (dispatch) => {
 };
 
 // GET MOVIE BY POPULARITY
-export const getPopular = (movie_id) => async (dispatch) => {
+export const getPopular = (id) => async (dispatch) => {
   setLoading();
   const res = await axios.get(
-    `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
   );
 
   console.log(res.data);

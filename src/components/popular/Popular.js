@@ -15,14 +15,23 @@ const Popular = ({ getPopular, setLoading, loading, movie, match }) => {
   if (loading) {
     return <Spinner />;
   } else {
-    return movie.length > 0 ? (
+    return (
       <Fragment>
         {movie.title} : {movie.overview}
         <button>
-          <Link to='/'>Go Back to Search</Link>
+          <Link to='/populars'>Go Back to Populars</Link>
         </button>
       </Fragment>
-    ) : null;
+    );
+
+    //   movie.length > 0 ? (
+    //   <Fragment>
+    //     {movie.title} : {movie.overview}
+    //     <button>
+    //       <Link to='/'>Go Back to Search</Link>
+    //     </button>
+    //   </Fragment>
+    // ) : null;
   }
 };
 
