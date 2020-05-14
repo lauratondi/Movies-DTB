@@ -13,6 +13,7 @@ import {
 const initialState = {
   text: '',
   movies: {},
+  image: '',
   movie: {},
   loading: false,
 };

@@ -34,6 +34,7 @@ const mapStateToProps = (state) => ({
   movies: state.movies.movies,
 });
 
-export default connect(mapStateToProps, { searchPopulars, getPopulars })(
-  Populars
-);
+export default connect(mapStateToProps, {
+  searchPopulars,
+  getPopulars,
+})(Populars);

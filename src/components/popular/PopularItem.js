@@ -8,14 +8,13 @@ const PopularItem = ({ movie }) => {
   return (
     <div className='movieItem'>
       <img
-        src={movie.poster_path}
+        src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
         alt=''
         className='round-img'
         style={{ width: '60px' }}
       />
       <h2>{movie.title}</h2>
       <h3>{movie.release_date}</h3>
-      <h3>{movie.id}</h3>
 
       <Link to={`/populars/${movie.id}`}>More</Link>
     </div>
