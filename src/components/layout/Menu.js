@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Popular from '../layout/Popular';
 
 const Menu = () => {
   return (
     <div className='menu'>
       <ul>
         <li>
-          <Link to='/popular'>
+          <Link to='/populars'>
             {' '}
             <h3>Popular</h3>
           </Link>

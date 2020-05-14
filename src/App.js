@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
-import Popular from './components/layout/Popular';
+import Populars from './components/popular/Populars';
+import Popular from './components/popular/Popular';
 import Landing from './components/pages/Landing';
 import Movie from './components/movies/Movie';
 import store from './store';
@@ -18,7 +19,8 @@ const App = () => {
             <Switch>
               <Route exact path='/' component={Landing} />
               <Route exact path='/movie/:id' component={Movie} />
-              <Route exact path='/popular' component={Popular} />
+              <Route exact path='/populars' component={Populars} />
+              <Route exact path='/populars/:id' component={Popular} />
             </Switch>
           </div>
         </div>

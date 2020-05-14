@@ -1,14 +1,15 @@
 import axios from 'axios';
-import { APIKey } from '../APIKey';
+import { APIKey, API_KEY } from '../APIKey';
 import {
   SEARCH_MOVIES,
   SET_LOADING,
   GET_MOVIES,
   GET_MOVIE,
-  GET_POPULARITY,
+  SEARCH_POPULARS,
+  GET_POPULARS,
+  GET_POPULAR,
   CLEAR_MOVIES,
 } from './types';
-// api_key=${API_KEY}
 
 // SEARCH MOVIES
 export const searchMovies = (text) => async (dispatch) => {
@@ -49,21 +50,50 @@ export const getMovie = (id) => async (dispatch) => {
   });
 };
 
-// GET MOVIES BY POPULARITY
-export const getPopularity = () => async (dispatch) => {
-  setLoading();
+// SEARCH MOVIES BY POPULARITY
+export const searchPopulars = () => async (dispatch) => {
   const res = await axios.get(
-    `https://api.themoviedb.org/3/discover/movie?api_key=f099db39d3292a1331aa4316b07e89d3&sort_by=popularity?`
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity?`
   );
 
   console.log(res.data);
 
   dispatch({
-    type: GET_POPULARITY,
+    type: SEARCH_POPULARS,
     payload: res.data,
   });
 };
-//
+
+// GET MOVIES BY POPULARITY
+export const getPopulars = () => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity?`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_POPULARS,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET MOVIE BY POPULARITY
+export const getPopular = (movie_id) => async (dispatch) => {
+  setLoading();
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_POPULAR,
+    payload: res.data,
+  });
+};
 
 // Set Loading
 export const setLoading = () => async (dispatch) => {

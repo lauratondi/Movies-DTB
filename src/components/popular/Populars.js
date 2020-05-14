@@ -1,13 +1,14 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { getPopularity } from '../../actions/movieActions';
+import { searchPopulars, getPopulars } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import MovieItem from '../movies/MovieItem';
+import PopularItem from '../popular/PopularItem';
 
-const Popular = ({ getPopularity, movies, loading }) => {
+const Populars = ({ searchPopulars, getPopulars, movies, loading }) => {
   useEffect(() => {
-    getPopularity();
+    searchPopulars();
+    getPopulars();
     // eslint-disable-next-line
   }, []);
 
@@ -16,14 +17,15 @@ const Popular = ({ getPopularity, movies, loading }) => {
   } else {
     return movies.total_results > 0
       ? movies.results.map((movie, index) => (
-          <MovieItem key={index} movie={movie} />
+          <PopularItem key={index} movie={movie} />
         ))
       : null;
   }
 };
 
-Popular.propTypes = {
-  getPopularity: PropTypes.func.isRequired,
+Populars.propTypes = {
+  searchPopulars: PropTypes.func.isRequired,
+  getPopulars: PropTypes.func.isRequired,
   movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,
 };
@@ -32,4 +34,6 @@ const mapStateToProps = (state) => ({
   movies: state.movies.movies,
 });
 
-export default connect(mapStateToProps, { getPopularity })(Popular);
+export default connect(mapStateToProps, { searchPopulars, getPopulars })(
+  Populars
+);
