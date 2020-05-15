@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const Landing = ({ loading }) => {
   return (
     <Fragment>
-      <Menu />
+      {/* <Menu /> */}
       <Search />
       {loading ? <Spinner /> : <Movies />}
     </Fragment>

@@ -11,7 +11,7 @@ const MovieItem = ({ movie }) => {
         src={movie.Poster}
         alt=''
         className='round-img'
-        style={{ width: '60px' }}
+        style={{ width: '150px' }}
       />
       <h2>{movie.Title}</h2>
       <h3>{movie.Year}</h3>

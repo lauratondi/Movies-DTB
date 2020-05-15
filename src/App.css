@@ -17,6 +17,7 @@
 }
 
 body {
+  padding: 0;
   font-family: 'Varela Round', sans-serif;
   font-size: 16px;
   /* line-height: 1.6; */
@@ -45,23 +46,23 @@ body {
 }
 
 /* Landing Page */
-.container {
+.flex-container {
   width: 100%;
   color: aliceblue;
   text-align: center;
-  display: grid;
+  /* display: grid; */
   /* background-color: #333333; */
 }
 
-.menu {
+/* .menu {
   grid-column: 1;
   grid-row: 1;
-}
+} */
 
 .search {
-  grid-column: 2 / span 6;
+  /* grid-column: 2 / span 6;
   grid-row: 1;
-  margin-right: 20%;
+  margin-right: 20%; */
   /* display: grid; */
 }
 

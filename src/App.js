@@ -6,6 +6,7 @@ import Populars from './components/popular/Populars';
 import Popular from './components/popular/Popular';
 import Landing from './components/pages/Landing';
 import Movie from './components/movies/Movie';
+import Menu from './components/layout/Menu';
 import store from './store';
 import { Provider } from 'react-redux';
 
@@ -15,7 +16,8 @@ const App = () => {
       <Router>
         <div className='App'>
           <Navbar />
-          <div className='container'>
+          <Menu />
+          <div className='flex-container'>
             <Switch>
               <Route exact path='/' component={Landing} />
               <Route exact path='/movie/:id' component={Movie} />
