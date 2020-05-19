@@ -8,7 +8,7 @@ const MovieItem = ({ movie }) => {
   return (
     <div className='card bg-black'>
       <div className='card-image'>
-        <span className='rate'>7</span>
+        {/* <span className='rate'>7</span> */}
         <Link to={`/movie/${movie.imdbID}`}>
           <img src={movie.Poster} alt='' />
         </Link>
