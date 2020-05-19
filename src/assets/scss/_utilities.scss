@@ -1,0 +1,27 @@
+// Backgrounds
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+  &-grey {
+    @include set-background($grey-color);
+  }
+  &-black {
+    @include set-background($black-color);
+  }
+}
+
+.btn-primary {
+  width: 70px;
+  padding: 6px;
+  margin-right: 19px;
+  border-radius: 5px;
+  background-color: $primary-color;
+  border: 1px;
+  color: $light-color;
+  font-size: 15px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}

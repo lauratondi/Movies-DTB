@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-const PopularItem = ({ movie }) => {
+const PopularItem = ({ movie, getPopular }) => {
   return (
     <div className='movieItem'>
       <img

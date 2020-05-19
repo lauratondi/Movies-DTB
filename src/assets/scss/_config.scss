@@ -1,0 +1,22 @@
+$primary-color: #51b6c4;
+$dark-color: #333333;
+$black-color: #191c1f;
+$grey-color: #222b31;
+$light-color: #e9ecef;
+$danger-color: #dc3545;
+$success-color: #28a745;
+
+// Set text coloro based on background
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $grey-color;
+  } @else {
+    @return $light-color;
+  }
+}
+
+// Set background and text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}

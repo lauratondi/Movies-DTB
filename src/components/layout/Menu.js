@@ -6,16 +6,16 @@ const Menu = () => {
     <div className='menu'>
       <ul>
         <li>
-          <Link to='/populars'>
-            {' '}
-            <h3>Popular</h3>
-          </Link>
+          <i className='fas fa-fire-alt fa-xs'></i>
+          <Link to='/populars'> Populars</Link>
         </li>
         <li>
-          <h3>Discover</h3>
+          <i className='fas fa-gift fa-xs'></i>
+          <Link to='/discover'> Discover</Link>
         </li>
         <li>
-          <h3>Top Rated</h3>
+          <i className='fas fa-star fa-xs'></i>
+          <Link to='/topRated'> Top Rated</Link>
         </li>
       </ul>
     </div>

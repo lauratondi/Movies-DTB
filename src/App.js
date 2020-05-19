@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
+import './assets/scss/style.scss';
 import Navbar from './components/layout/Navbar';
+import Search from './components/movies/Search';
 import Populars from './components/popular/Populars';
 import Popular from './components/popular/Popular';
 import Landing from './components/pages/Landing';
@@ -16,15 +17,15 @@ const App = () => {
       <Router>
         <div className='App'>
           <Navbar />
-          <Menu />
-          <div className='flex-container'>
-            <Switch>
-              <Route exact path='/' component={Landing} />
-              <Route exact path='/movie/:id' component={Movie} />
-              <Route exact path='/populars' component={Populars} />
-              <Route exact path='/populars/:id' component={Popular} />
-            </Switch>
-          </div>
+          {/* <Menu />
+          <Search /> */}
+          <Landing />
+          <Switch>
+            {/* <Route exact path='/' component={Landing} /> */}
+            <Route exact path='/movie/:id' component={Movie} />
+            <Route exact path='/populars' component={Populars} />
+            <Route exact path='/populars/:id' component={Popular} />
+          </Switch>
         </div>
       </Router>
     </Provider>

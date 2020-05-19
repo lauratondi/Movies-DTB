@@ -23,15 +23,6 @@ const Popular = ({ getPopular, setLoading, loading, movie, match }) => {
         </button>
       </Fragment>
     );
-
-    //   movie.length > 0 ? (
-    //   <Fragment>
-    //     {movie.title} : {movie.overview}
-    //     <button>
-    //       <Link to='/'>Go Back to Search</Link>
-    //     </button>
-    //   </Fragment>
-    // ) : null;
   }
 };
 

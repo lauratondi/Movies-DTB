@@ -8,11 +8,15 @@ const Movies = ({ movies, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
-    return movies.Response === 'True'
-      ? movies.Search.map((movie, index) => (
-          <MovieItem key={index} movie={movie} />
-        ))
-      : null;
+    return (
+      <section className='container-movies'>
+        {movies.Response === 'True'
+          ? movies.Search.map((movie, index) => (
+              <MovieItem key={index} movie={movie} />
+            ))
+          : null}
+      </section>
+    );
   }
 };
 

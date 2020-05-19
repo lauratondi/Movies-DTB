@@ -41,11 +41,21 @@ const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
           value={text}
           onChange={onChange}
         />
-
-        <input type='submit' value='Search' />
       </form>
+      <div className='buttons'> </div>
+      <button
+        type='submit'
+        value='Search'
+        className='btn btn-primary'
+        form='form'
+        onClick={onSubmit}
+      >
+        Search
+      </button>
 
-      <button onClick={clearMovies}>Clear Search</button>
+      <button className='btn btn-primary' onClick={clearMovies}>
+        Clear{' '}
+      </button>
     </div>
   );
 };

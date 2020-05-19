@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 
 /* Global Styles */
-:root {
+/* :root {
   /* --primary-color: #1ceacf; */
-  --primary-color: #51b6c4;
+  /* --primary-color: #51b6c4;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
-  --success-color: #28a745;
-}
+  --success-color: #28a745; */
+/* }  */
 
-* {
+/* * {
   box-sizing: border-box;
   /* margin: 0; */
-  padding: 0;
-}
+  /* padding: 0; */
+} */
 
-body {
+/* body {
   padding: 0;
   font-family: 'Varela Round', sans-serif;
   font-size: 16px;
   /* line-height: 1.6; */
-  background-color: #333333;
-  color: aliceblue;
-}
+  /* background-color: #333333;
+  color: aliceblue; */
+} */
 
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -34,9 +34,10 @@ body {
   width: 100%;
   background-color: #51b6c4;
   color: #333;
-}
+  /* position: fixed; */
+} */
 
-.navLink {
+/* .navLink {
   text-decoration-line: none;
   color: #333333;
   position: relative;
@@ -46,10 +47,10 @@ body {
 }
 
 /* Landing Page */
-.flex-container {
+/* .flex-container {
   width: 100%;
   color: aliceblue;
-  text-align: center;
+  text-align: center; */
   /* display: grid; */
   /* background-color: #333333; */
 }
@@ -59,23 +60,22 @@ body {
   grid-row: 1;
 } */
 
-.search {
-  /* grid-column: 2 / span 6;
-  grid-row: 1;
-  margin-right: 20%; */
-  /* display: grid; */
-}
+/* .search {
+  display: flex;
+  flex-direction: column;
+} */
 
-.formInput {
+/* .formInput {
   background-color: #333333;
   width: 50%;
-  height: 60px;
+  /* height: 60px; */
+  /* padding: 20px;
   border: 1px solid black;
   font-size: 20px;
   color: grey;
   margin-left: 19px;
-}
+} */ */
 
-.formInput:-internal-autofill-selected {
+/* .formInput:-internal-autofill-selected {
   background-color: #333333;
-}
+} */ */
