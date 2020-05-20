@@ -8,6 +8,7 @@ import Popular from './components/popular/Popular';
 import Landing from './components/pages/Landing';
 import Movie from './components/movies/Movie';
 import Menu from './components/layout/Menu';
+import Footer from './components/layout/Footer';
 import store from './store';
 import { Provider } from 'react-redux';
 
@@ -26,6 +27,7 @@ const App = () => {
             <Route exact path='/populars' component={Populars} />
             <Route exact path='/populars/:id' component={Popular} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     </Provider>

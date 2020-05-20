@@ -10,7 +10,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   background-color: $grey-color;
-  font-size: 22px;
+  font-size: 18px;
   min-height: calc(100vh-170px-40px);
 }
 
@@ -120,6 +120,9 @@ internal-autofill-selected {
   width: 203px;
   margin: 15px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   img {
     width: 203px;
     &:hover {
@@ -132,7 +135,7 @@ internal-autofill-selected {
     justify-content: center;
   }
   .year {
-    margin-top: -51px;
+    margin-top: -34px;
     display: flex;
     justify-content: center;
   }
