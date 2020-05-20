@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import TMDBlogo from '../../assets/img/TMDBlogo.svg';
 
 const Footer = () => {
@@ -7,10 +6,15 @@ const Footer = () => {
     <footer>
       <img src={TMDBlogo} alt='ref' className='logo' />
       <p>
-        This website uses the <Link to='https://www.themoviedb.org/'>TMDb</Link>{' '}
-        and
-        <Link to='http://www.omdbapi.com/'>OMDB</Link> API, but it's not
-        endorsed or certified by them.
+        This website uses the{' '}
+        <a href='https://www.themoviedb.org/' target='_blank'>
+          TMDb
+        </a>{' '}
+        and{' '}
+        <a href='http://www.omdbapi.com/' target='_blank'>
+          OMDB
+        </a>{' '}
+        API, but it's not endorsed or certified by them.
       </p>
     </footer>
   );

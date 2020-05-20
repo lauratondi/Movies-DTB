@@ -10,6 +10,7 @@ const Spinner = () => (
         width: '200px',
         margin: 'auto',
         display: 'block',
+        backgroundColor: 'transparent',
       }}
     />
   </Fragment>
