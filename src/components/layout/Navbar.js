@@ -6,7 +6,7 @@ const Navbar = ({ siteTitle }) => {
   return (
     <nav className='navbar bg-primary'>
       <i className='fas fa-film fa-5x'></i>
-      <Link to='/landing'>
+      <Link to='/'>
         <h1>
           <b>Movies Database</b>
         </h1>

@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { getMovie } from '../../actions/movieActions';
-
 import { Link } from 'react-router-dom';
 
 const MovieItem = ({ movie }) => {
   return (
     <div className='card bg-black'>
       <div className='card-image'>
-        {/* <span className='rate'>7</span> */}
-        <Link to={`/movie/${movie.imdbID}`}>
+        <Link to={`/movies/${movie.imdbID}`}>
           <img src={movie.Poster} alt='' />
         </Link>
       </div>
@@ -19,6 +16,8 @@ const MovieItem = ({ movie }) => {
       <div className='year'>
         <p>{movie.Year}</p>
       </div>
+
+      <Link to={`/movies/${movie.imdbID}`}>More</Link>
     </div>
   );
 };

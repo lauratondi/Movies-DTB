@@ -16,12 +16,44 @@ const Popular = ({ getPopular, setLoading, loading, movie, match }) => {
     return <Spinner />;
   } else {
     return (
-      <Fragment>
-        {movie.title} : {movie.overview}
-        <button>
-          <Link to='/populars'>Go Back to Populars</Link>
-        </button>
-      </Fragment>
+      <div className='container-movie'>
+        <div className='poster'>
+          <img
+            src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+            alt=''
+          />
+        </div>
+        <div className='info bg-grey'>
+          <h2>{movie.title}</h2>
+          <ul>
+            <li>
+              <b>Genres:</b>
+            </li>
+            <li>
+              <b>Runtime:</b> {movie.runtime}
+            </li>
+            <li>
+              <b>Release:</b> {movie.release_date}
+            </li>
+            <li>
+              <b>Original title:</b> {movie.original_title}
+            </li>
+            <li>
+              <b>Original language:</b> {movie.original_language}
+            </li>
+            <li>
+              <b>Vote average:</b> {movie.vote_average}
+            </li>
+            <li>
+              <b>Tagline:</b> {movie.tagline}
+            </li>
+          </ul>
+        </div>
+        <div className='plot bg-grey'>
+          <b>Overview:</b>
+          <p>{movie.overview}</p>
+        </div>
+      </div>
     );
   }
 };

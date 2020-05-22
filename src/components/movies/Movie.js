@@ -17,8 +17,10 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
   if (loading) {
     return <Spinner />;
   } else {
-    return movie.Response === 'True' ? (
-      <section className='container-movie'>
+    return (
+      <div className='container-movie'>
+        {/* {movie.Response === 'True' ? (
+          <Fragment> */}
         <div className='poster'>
           <img src={movie.Poster} alt='' />
         </div>
@@ -61,12 +63,25 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
           <b>Overview:</b>
           <p>{movie.Plot}</p>
         </div>
-      </section>
-    ) : (
-      <h3>Sorry, movie not found</h3>
+        {/* </Fragment>
+        ) : null} */}
+      </div>
     );
   }
 };
+
+// if (loading) {
+//   return <Spinner />;
+// } else {
+//   return (  movie.Response === 'True' ?
+//     <Fragment>
+//       {movie.Title} : {movie.Plot}
+//       <button>
+//         <Link to='/'>Go Back to Search</Link>
+//       </button>
+//     </Fragment>
+//   );
+// }
 
 Movie.propTypes = {
   movie: PropTypes.object.isRequired,

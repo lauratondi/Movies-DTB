@@ -15,11 +15,17 @@ const Populars = ({ searchPopulars, getPopulars, movies, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
-    return movies.total_results > 0
-      ? movies.results.map((movie, index) => (
-          <PopularItem key={index} movie={movie} />
-        ))
-      : null;
+    return (
+      <Fragment>
+        <div className='container-movies'>
+          {movies.total_results > 0
+            ? movies.results.map((movie, index) => (
+                <PopularItem key={index} movie={movie} />
+              ))
+            : null}
+        </div>
+      </Fragment>
+    );
   }
 };
 

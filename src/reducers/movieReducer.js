@@ -13,7 +13,6 @@ import {
 const initialState = {
   text: '',
   movies: {},
-  image: '',
   movie: {},
   loading: false,
 };
@@ -34,6 +33,11 @@ export default (state = initialState, action) => {
         loading: false,
       };
     case GET_MOVIE:
+      return {
+        ...state,
+        movie: action.payload,
+        loading: false,
+      };
     case GET_POPULAR:
       return {
         ...state,

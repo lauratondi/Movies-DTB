@@ -9,13 +9,15 @@ const Movies = ({ movies, loading }) => {
     return <Spinner />;
   } else {
     return (
-      <section className='container-movies'>
-        {movies.Response === 'True'
-          ? movies.Search.map((movie, index) => (
-              <MovieItem key={index} movie={movie} />
-            ))
-          : null}
-      </section>
+      <Fragment>
+        <div className='container-movies'>
+          {movies.Response === 'True'
+            ? movies.Search.map((movie, index) => (
+                <MovieItem key={index} movie={movie} />
+              ))
+            : null}
+        </div>
+      </Fragment>
     );
   }
 };

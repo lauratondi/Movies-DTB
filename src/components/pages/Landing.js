@@ -8,18 +8,10 @@ import PropTypes from 'prop-types';
 
 const Landing = ({ loading }) => {
   return (
-    <div className='landing bg-grey'>
-      <Menu />
+    <Fragment>
       <Search />
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div>
-          {' '}
-          <Movies />{' '}
-        </div>
-      )}
-    </div>
+      {loading ? <Spinner /> : <Movies />}
+    </Fragment>
   );
 };
 
