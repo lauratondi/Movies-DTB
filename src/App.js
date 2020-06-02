@@ -11,6 +11,7 @@ import Footer from './components/layout/Footer';
 import store from './store';
 import { Provider } from 'react-redux';
 import TopRated from './components/topRated/TopRated';
+import TopPage from './components/topRated/TopPage';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
               <Route exact path='/populars' component={Populars} />
               <Route exact path='/populars/:id' component={Popular} />
               <Route exact path='/topRated' component={TopRated} />
+              <Route exact path='/topRated/:id' component={TopPage} />
             </Switch>
           </div>
           <Footer />

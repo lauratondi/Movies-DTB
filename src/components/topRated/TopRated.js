@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getTopRated } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import PopularItem from '../popular/PopularItem';
+import TopItem from '../topRated/TopItem';
 
 const TopRated = ({ getTopRated, movies, loading }) => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const TopRated = ({ getTopRated, movies, loading }) => {
         <div className='container-movies'>
           {movies.total_results > 0
             ? movies.results.map((movie, index) => (
-                <PopularItem key={index} movie={movie} />
+                <TopItem key={index} movie={movie} />
               ))
             : null}
         </div>
