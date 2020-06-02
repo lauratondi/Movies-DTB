@@ -6,7 +6,7 @@ const PopularItem = ({ movie }) => {
   return (
     <div className='card bg-black'>
       <div className='card-image'>
-        <span class='rate'>{movie.vote_average}</span>
+        <span className='rate'>{movie.vote_average}</span>
         <Link to={`/populars/${movie.id}`}>
           <img
             src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}

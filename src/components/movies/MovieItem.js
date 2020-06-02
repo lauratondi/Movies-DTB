@@ -6,7 +6,7 @@ const MovieItem = ({ movie }) => {
   return (
     <div className='card bg-black'>
       <div className='card-image'>
-        <Link to={`/movies/${movie.imdbID}`}>
+        <Link to={`/movie/${movie.imdbID}`}>
           <img src={movie.Poster} alt='' />
         </Link>
       </div>

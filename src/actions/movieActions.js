@@ -9,6 +9,7 @@ import {
   GET_POPULARS,
   GET_POPULAR,
   CLEAR_MOVIES,
+  MOVIES_ERROR,
 } from './types';
 
 // SEARCH MOVIES
@@ -40,12 +41,14 @@ export const getMovies = (text) => async (dispatch) => {
 export const getMovie = (id) => async (dispatch) => {
   setLoading();
 
+  console.log('Hi Movies');
+
   const res = await axios.get(
-    // `http://www.omdbapi.com/?i=${id}&apikey=${APIKey}&plot=full`
-    `http://www.omdbapi.com/?apikey=${APIKey}&i=${id}&&plot=full`
+    `http://www.omdbapi.com/?i=${id}&apikey=${APIKey}&plot=full`
   );
 
   console.log(res.data);
+
   dispatch({
     type: GET_MOVIE,
     payload: res.data,
@@ -108,5 +111,12 @@ export const setLoading = () => async (dispatch) => {
 export const clearMovies = () => async (dispatch) => {
   dispatch({
     type: CLEAR_MOVIES,
+  });
+};
+
+// Movie Error
+export const moviesError = () => async (dispatch) => {
+  dispatch({
+    type: MOVIES_ERROR,
   });
 };

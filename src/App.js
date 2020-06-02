@@ -6,7 +6,7 @@ import Menu from './components/layout/Menu';
 import Populars from './components/popular/Populars';
 import Popular from './components/popular/Popular';
 import Landing from './components/pages/Landing';
-import Movie from './components/movies/Movies';
+import Movie from './components/movies/Movie';
 import Footer from './components/layout/Footer';
 import store from './store';
 import { Provider } from 'react-redux';
@@ -21,12 +21,12 @@ const App = () => {
           <div className='container bg-grey'>
             <Switch>
               <Route exact path='/' component={Landing} />
-              <Route exact path='/movies/:id' component={Movie} />
+              <Route path='/movie/:id' component={Movie} />
               <Route exact path='/populars' component={Populars} />
               <Route exact path='/populars/:id' component={Popular} />
             </Switch>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </Provider>

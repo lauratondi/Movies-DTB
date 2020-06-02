@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  searchMovies,
+  // searchMovies,
   getMovies,
   setLoading,
   clearMovies,
 } from '../../actions/movieActions';
 
-const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
+const Search = ({ getMovies, setLoading, clearMovies }) => {
   useEffect(() => {
-    searchMovies();
+    // searchMovies();
     clearMovies();
     // eslint-disable-next-line
   }, []);
@@ -60,10 +60,9 @@ const Search = ({ searchMovies, getMovies, setLoading, clearMovies }) => {
 };
 
 Search.proptype = {
-  searchMovies: PropTypes.func.isRequired,
+  // searchMovies: PropTypes.func.isRequired,
   getMovies: PropTypes.func.isRequired,
   setLoading: PropTypes.func.isRequired,
-  showClear: PropTypes.bool.isRequired,
   clearMovies: PropTypes.func.isRequired,
 };
 
@@ -72,7 +71,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  searchMovies,
   getMovies,
   setLoading,
   clearMovies,

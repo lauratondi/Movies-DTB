@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import PopularItem from '../popular/PopularItem';
 
-const Populars = ({ searchPopulars, getPopulars, movies, loading }) => {
+const Populars = ({ getPopulars, movies, loading }) => {
   useEffect(() => {
-    searchPopulars();
+    // searchPopulars();
     getPopulars();
     // eslint-disable-next-line
   }, []);
@@ -30,7 +30,7 @@ const Populars = ({ searchPopulars, getPopulars, movies, loading }) => {
 };
 
 Populars.propTypes = {
-  searchPopulars: PropTypes.func.isRequired,
+  // searchPopulars: PropTypes.func.isRequired,
   getPopulars: PropTypes.func.isRequired,
   movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,
@@ -41,6 +41,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  searchPopulars,
   getPopulars,
 })(Populars);
