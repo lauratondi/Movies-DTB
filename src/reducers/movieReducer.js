@@ -8,6 +8,7 @@ import {
   SET_LOADING,
   MOVIES_ERROR,
   CLEAR_MOVIES,
+  GET_TOPRATED,
 } from '../actions/types';
 
 const initialState = {
@@ -19,14 +20,9 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SEARCH_MOVIES:
-      return {
-        ...state,
-        text: action.payload,
-        loading: false,
-      };
     case GET_MOVIES:
     case GET_POPULARS:
+    case GET_TOPRATED:
       return {
         ...state,
         movies: action.payload,
@@ -42,12 +38,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         movie: action.payload,
-        loading: false,
-      };
-    case SEARCH_POPULARS:
-      return {
-        ...state,
-        movies: action.payload,
         loading: false,
       };
     case CLEAR_MOVIES:

@@ -16,8 +16,6 @@ const MovieItem = ({ movie }) => {
       <div className='year'>
         <p>{movie.Year}</p>
       </div>
-
-      <Link to={`/movies/${movie.imdbID}`}>More</Link>
     </div>
   );
 };

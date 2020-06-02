@@ -10,6 +10,7 @@ import Movie from './components/movies/Movie';
 import Footer from './components/layout/Footer';
 import store from './store';
 import { Provider } from 'react-redux';
+import TopRated from './components/topRated/TopRated';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <Route path='/movie/:id' component={Movie} />
               <Route exact path='/populars' component={Populars} />
               <Route exact path='/populars/:id' component={Popular} />
+              <Route exact path='/topRated' component={TopRated} />
             </Switch>
           </div>
           <Footer />
