@@ -11,6 +11,10 @@ const Populars = ({ getPopulars, movies, loading }) => {
     // eslint-disable-next-line
   }, []);
 
+  const onClick = (e) => {
+    getPopulars(movies.page + 1);
+  };
+
   if (loading) {
     return <Spinner />;
   } else {
@@ -22,6 +26,11 @@ const Populars = ({ getPopulars, movies, loading }) => {
                 <PopularItem key={index} movie={movie} />
               ))
             : null}
+        </div>
+        <div className='load'>
+          <button className='btn btn-primary' onClick={onClick}>
+            Load more
+          </button>
         </div>
       </Fragment>
     );

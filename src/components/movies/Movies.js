@@ -4,20 +4,18 @@ import MovieItem from './MovieItem';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 
-const Movies = ({ movies, loading }) => {
+const Movies = ({ getMovies, movies, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
     return (
-      <Fragment>
-        <div className='container-movies'>
-          {movies.Response === 'True'
-            ? movies.Search.map((movie, index) => (
-                <MovieItem key={index} movie={movie} />
-              ))
-            : null}
-        </div>
-      </Fragment>
+      <div className='container-movies'>
+        {movies.Response === 'True'
+          ? movies.Search.map((movie, index) => (
+              <MovieItem key={index} movie={movie} />
+            ))
+          : null}
+      </div>
     );
   }
 };

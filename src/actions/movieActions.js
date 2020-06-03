@@ -46,10 +46,10 @@ export const getMovie = (id) => async (dispatch) => {
 };
 
 // GET MOVIES BY POPULARITY
-export const getPopulars = () => async (dispatch) => {
+export const getPopulars = (page) => async (dispatch) => {
   setLoading(true);
   const res = await axios.get(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}`
   );
 
   console.log(res.data);

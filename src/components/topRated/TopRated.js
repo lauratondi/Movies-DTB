@@ -19,17 +19,20 @@ const TopRated = ({ getTopRated, movies, loading }) => {
     return <Spinner />;
   } else {
     return (
-      <div className='container-movies'>
-        {movies.total_results > 0
-          ? movies.results.map((movie, index) => (
-              <TopItem key={index} movie={movie} />
-            ))
-          : null}
-        <button className='btn btn-primary' onClick={onClick}>
-          {' '}
-          Load more{' '}
-        </button>
-      </div>
+      <Fragment>
+        <div className='container-movies'>
+          {movies.total_results > 0
+            ? movies.results.map((movie, index) => (
+                <TopItem key={index} movie={movie} />
+              ))
+            : null}
+        </div>
+        <div className='load'>
+          <button className='btn btn-primary' onClick={onClick}>
+            Load more
+          </button>
+        </div>
+      </Fragment>
     );
   }
 };
