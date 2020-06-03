@@ -5,8 +5,9 @@ import {
   GET_MOVIES,
   GET_MOVIE,
   GET_POPULARS,
-  GET_POPULAR,
+  GET_DETAIL,
   GET_TOPRATED,
+  GET_DISCOVERS,
   CLEAR_MOVIES,
 } from './types';
 
@@ -62,7 +63,7 @@ export const getPopulars = (page) => async (dispatch) => {
 };
 
 // GET MOVIE BY POPULARITY
-export const getPopular = (id) => async (dispatch) => {
+export const getDetail = (id) => async (dispatch) => {
   setLoading();
   const res = await axios.get(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
@@ -71,7 +72,7 @@ export const getPopular = (id) => async (dispatch) => {
   console.log(res.data);
 
   dispatch({
-    type: GET_POPULAR,
+    type: GET_DETAIL,
     payload: res.data,
   });
 };
@@ -87,6 +88,22 @@ export const getTopRated = (page) => async (dispatch) => {
 
   dispatch({
     type: GET_TOPRATED,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET MOVIES BY DISCOVER
+export const getDiscovers = (page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_DISCOVERS,
     payload: res.data,
     loading: false,
   });

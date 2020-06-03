@@ -5,7 +5,7 @@ import { getDetail, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 
-const TopPage = ({ getDetail, setLoading, loading, movie, match }) => {
+const Discover = ({ getDetail, setLoading, loading, movie, match }) => {
   useEffect(() => {
     getDetail(match.params.id);
     setLoading();
@@ -58,7 +58,7 @@ const TopPage = ({ getDetail, setLoading, loading, movie, match }) => {
   }
 };
 
-TopPage.propTypes = {
+Discover.propTypes = {
   movie: PropTypes.object.isRequired,
   loading: PropTypes.bool,
   getDetail: PropTypes.func.isRequired,
@@ -70,4 +70,4 @@ const mapStateToProps = (state) => ({
   loading: state.movies.loading,
 });
 
-export default connect(mapStateToProps, { getDetail, setLoading })(TopPage);
+export default connect(mapStateToProps, { getDetail, setLoading })(Discover);

@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getPopular, setLoading } from '../../actions/movieActions';
+import { getDetail, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
 
-const Popular = ({ getPopular, setLoading, loading, movie, match }) => {
+const Popular = ({ getDetail, setLoading, loading, movie, match }) => {
   useEffect(() => {
-    getPopular(match.params.id);
+    getDetail(match.params.id);
     setLoading();
     // eslint-disable-next-line
   }, []);
@@ -61,7 +61,7 @@ const Popular = ({ getPopular, setLoading, loading, movie, match }) => {
 Popular.propTypes = {
   movie: PropTypes.object.isRequired,
   loading: PropTypes.bool,
-  getPopular: PropTypes.func.isRequired,
+  getDetail: PropTypes.func.isRequired,
   setLoading: PropTypes.func.isRequired,
 };
 
@@ -70,4 +70,4 @@ const mapStateToProps = (state) => ({
   loading: state.movies.loading,
 });
 
-export default connect(mapStateToProps, { getPopular, setLoading })(Popular);
+export default connect(mapStateToProps, { getDetail, setLoading })(Popular);

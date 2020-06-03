@@ -12,6 +12,8 @@ import store from './store';
 import { Provider } from 'react-redux';
 import TopRated from './components/topRated/TopRated';
 import TopPage from './components/topRated/TopPage';
+import Discovers from './components/discovers/Discovers';
+import Discover from './components/discovers/Discover';
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
               <Route path='/movie/:id' component={Movie} />
               <Route exact path='/populars' component={Populars} />
               <Route exact path='/populars/:id' component={Popular} />
+              <Route exact path='/discover/' component={Discovers} />
+              <Route exact path='/discover/:id' component={Discover} />
               <Route exact path='/topRated' component={TopRated} />
               <Route exact path='/topRated/:id' component={TopPage} />
             </Switch>

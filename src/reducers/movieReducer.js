@@ -1,14 +1,13 @@
 import {
-  SEARCH_MOVIES,
   GET_MOVIES,
   GET_MOVIE,
-  SEARCH_POPULARS,
   GET_POPULARS,
-  GET_POPULAR,
+  GET_DETAIL,
   SET_LOADING,
   MOVIES_ERROR,
   CLEAR_MOVIES,
   GET_TOPRATED,
+  GET_DISCOVERS,
 } from '../actions/types';
 
 const initialState = {
@@ -23,18 +22,14 @@ export default (state = initialState, action) => {
     case GET_MOVIES:
     case GET_POPULARS:
     case GET_TOPRATED:
+    case GET_DISCOVERS:
       return {
         ...state,
         movies: action.payload,
         loading: false,
       };
     case GET_MOVIE:
-      return {
-        ...state,
-        movie: action.payload,
-        loading: false,
-      };
-    case GET_POPULAR:
+    case GET_DETAIL:
       return {
         ...state,
         movie: action.payload,
