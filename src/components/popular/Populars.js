@@ -1,13 +1,12 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { searchPopulars, getPopulars } from '../../actions/movieActions';
+import { getPopulars } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import PopularItem from '../popular/PopularItem';
 
 const Populars = ({ getPopulars, movies, loading }) => {
   useEffect(() => {
-    // searchPopulars();
     getPopulars();
     // eslint-disable-next-line
   }, []);
@@ -30,7 +29,6 @@ const Populars = ({ getPopulars, movies, loading }) => {
 };
 
 Populars.propTypes = {
-  // searchPopulars: PropTypes.func.isRequired,
   getPopulars: PropTypes.func.isRequired,
   movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,

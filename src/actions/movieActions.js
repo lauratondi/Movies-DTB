@@ -77,10 +77,10 @@ export const getPopular = (id) => async (dispatch) => {
 };
 
 // GET MOVIES BY TOP-RATED
-export const getTopRated = () => async (dispatch) => {
+export const getTopRated = (page) => async (dispatch) => {
   setLoading(true);
   const res = await axios.get(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&page=${page}`
   );
 
   console.log(res.data);

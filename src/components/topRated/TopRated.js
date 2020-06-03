@@ -11,19 +11,25 @@ const TopRated = ({ getTopRated, movies, loading }) => {
     // eslint-disable-next-line
   }, []);
 
+  const onClick = (e) => {
+    getTopRated(movies.page + 1);
+  };
+
   if (loading) {
     return <Spinner />;
   } else {
     return (
-      <Fragment>
-        <div className='container-movies'>
-          {movies.total_results > 0
-            ? movies.results.map((movie, index) => (
-                <TopItem key={index} movie={movie} />
-              ))
-            : null}
-        </div>
-      </Fragment>
+      <div className='container-movies'>
+        {movies.total_results > 0
+          ? movies.results.map((movie, index) => (
+              <TopItem key={index} movie={movie} />
+            ))
+          : null}
+        <button className='btn btn-primary' onClick={onClick}>
+          {' '}
+          Load more{' '}
+        </button>
+      </div>
     );
   }
 };
