@@ -8,6 +8,7 @@ import {
   GET_DETAIL,
   GET_TOPRATED,
   GET_DISCOVERS,
+  GET_YEAR,
   CLEAR_MOVIES,
 } from './types';
 
@@ -104,6 +105,22 @@ export const getDiscovers = (page) => async (dispatch) => {
 
   dispatch({
     type: GET_DISCOVERS,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET MOVIES BY DISCOVER per YEAR
+export const getYear = (year, page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=${year}&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_YEAR,
     payload: res.data,
     loading: false,
   });

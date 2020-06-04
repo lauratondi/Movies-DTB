@@ -8,10 +8,11 @@ import {
   CLEAR_MOVIES,
   GET_TOPRATED,
   GET_DISCOVERS,
+  GET_YEAR,
 } from '../actions/types';
 
 const initialState = {
-  text: '',
+  // text: '',
   movies: {},
   movie: {},
   loading: false,
@@ -23,6 +24,7 @@ export default (state = initialState, action) => {
     case GET_POPULARS:
     case GET_TOPRATED:
     case GET_DISCOVERS:
+    case GET_YEAR:
       return {
         ...state,
         movies: action.payload,

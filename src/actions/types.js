@@ -4,6 +4,7 @@ export const GET_POPULARS = 'GET_POPULARS';
 export const GET_DETAIL = 'GET_DETAIL';
 export const GET_TOPRATED = 'GET_TOPRATED';
 export const GET_DISCOVERS = 'GET_DISCOVERS';
+export const GET_YEAR = 'GET_YEAR';
 export const SET_LOADING = 'SET_LOADING';
 export const CLEAR_MOVIES = 'CLEAR_MOVIES';
 export const MOVIES_ERROR = 'MOVIES-ERROR';

@@ -1,15 +1,28 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { getDiscovers } from '../../actions/movieActions';
+import { getDiscovers, getYear } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DiscoverItem from '../discovers/DiscoverItem';
+import Filter from '../discovers/Filter';
 
-const Populars = ({ getDiscovers, movies, loading }) => {
+const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
   useEffect(() => {
     getDiscovers();
     // eslint-disable-next-line
   }, []);
+
+  const [year, setYear] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    getYear(year);
+    setYear('');
+  };
+
+  const onChange = (e) => {
+    setYear(e.target.value);
+  };
 
   const onClick = (e) => {
     getDiscovers(movies.page + 1);
@@ -20,6 +33,17 @@ const Populars = ({ getDiscovers, movies, loading }) => {
   } else {
     return (
       <Fragment>
+        <form onSubmit={onSubmit} className='form'>
+          <input
+            className='formInput'
+            type='year'
+            name='year'
+            placeholder='Search Movies...'
+            value={year}
+            onChange={onChange}
+          />
+        </form>
+        {/* <Filter /> */}
         <div className='container-movies'>
           {movies.total_results > 0
             ? movies.results.map((movie, index) => (
@@ -37,8 +61,9 @@ const Populars = ({ getDiscovers, movies, loading }) => {
   }
 };
 
-Populars.propTypes = {
+Discovers.propTypes = {
   getDiscovers: PropTypes.func.isRequired,
+  getYear: PropTypes.func.isRequired,
   movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,
 };
@@ -49,4 +74,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   getDiscovers,
-})(Populars);
+  getYear,
+})(Discovers);
