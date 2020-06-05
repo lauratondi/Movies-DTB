@@ -4,13 +4,12 @@ import { getDiscovers, getYear } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DiscoverItem from '../discovers/DiscoverItem';
-import Filter from '../discovers/Filter';
 
 const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
-  useEffect(() => {
-    getDiscovers();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   getDiscovers();
+  //   // eslint-disable-next-line
+  // }, []);
 
   const [year, setYear] = useState('');
 
@@ -25,7 +24,8 @@ const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
   };
 
   const onClick = (e) => {
-    getDiscovers(movies.page + 1);
+    e.preventDefault();
+    getYear(year.page + 1);
   };
 
   if (loading) {
@@ -38,24 +38,25 @@ const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
             className='formInput'
             type='year'
             name='year'
-            placeholder='Search Movies...'
+            placeholder='Search By Year...'
             value={year}
             onChange={onChange}
           />
         </form>
-        {/* <Filter /> */}
         <div className='container-movies'>
-          {movies.total_results > 0
-            ? movies.results.map((movie, index) => (
-                <DiscoverItem key={index} movie={movie} />
-              ))
-            : null}
+          {movies.total_results > 0 &&
+            movies.results.map((movie, index) => (
+              <DiscoverItem key={index} movie={movie} />
+            ))}
         </div>
-        <div className='load'>
-          <button className='btn btn-primary' onClick={onClick}>
-            Load more
-          </button>
-        </div>
+
+        {movies.total_results > 0 ? (
+          <div className='load'>
+            <button className='btn btn-primary' onClick={onClick}>
+              Load more
+            </button>
+          </div>
+        ) : null}
       </Fragment>
     );
   }

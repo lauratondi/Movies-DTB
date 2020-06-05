@@ -28,6 +28,10 @@ const TopPage = ({ getDetail, setLoading, loading, movie, match }) => {
           <ul>
             <li>
               <b>Genres:</b>
+              {movie.genres &&
+                movie.genres.map((genre) => (
+                  <Fragment key={genre.id}>{genre.name}</Fragment>
+                ))}
             </li>
             <li>
               <b>Runtime:</b> {movie.runtime}
