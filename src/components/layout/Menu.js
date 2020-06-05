@@ -10,12 +10,12 @@ const Menu = () => {
           <Link to='/populars'> Populars</Link>
         </li>
         <li>
-          <i className='fas fa-gift fa-xs'></i>
-          <Link to='/discover'> Discover</Link>
+          <i className='fas fa-star fa-xs'></i>
+          <Link to='/topRated'>Top Rated</Link>
         </li>
         <li>
-          <i className='fas fa-star fa-xs'></i>
-          <Link to='/topRated'> Top Rated</Link>
+          <i className='fas fa-gift fa-xs'></i>
+          <Link to='/discover'> Discover</Link>
         </li>
       </ul>
     </div>

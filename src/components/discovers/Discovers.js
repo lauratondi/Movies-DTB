@@ -1,16 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { getDiscovers, getYear } from '../../actions/movieActions';
+import { getYear, clearMovies } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DiscoverItem from '../discovers/DiscoverItem';
 
-const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
-  // useEffect(() => {
-  //   getDiscovers();
-  //   // eslint-disable-next-line
-  // }, []);
-
+const Discovers = ({ clearMovies, getYear, movies, loading }) => {
   const [year, setYear] = useState('');
 
   const onSubmit = (e) => {
@@ -33,7 +28,7 @@ const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
   } else {
     return (
       <Fragment>
-        <form onSubmit={onSubmit} className='form'>
+        <form onSubmit={onSubmit} className='form-year'>
           <input
             className='formInput'
             type='year'
@@ -43,6 +38,21 @@ const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
             onChange={onChange}
           />
         </form>
+        <div className='buttons'>
+          <button
+            type='submit'
+            value='Search'
+            className='btn btn-primary'
+            form='form'
+            onClick={onSubmit}
+          >
+            Search
+          </button>
+
+          <button className='btn btn-primary' onClick={clearMovies}>
+            Clear{' '}
+          </button>
+        </div>
         <div className='container-movies'>
           {movies.total_results > 0 &&
             movies.results.map((movie, index) => (
@@ -63,7 +73,7 @@ const Discovers = ({ getDiscovers, getYear, movies, loading }) => {
 };
 
 Discovers.propTypes = {
-  getDiscovers: PropTypes.func.isRequired,
+  clearMovies: PropTypes.func.isRequired,
   getYear: PropTypes.func.isRequired,
   movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,
@@ -74,6 +84,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  getDiscovers,
+  clearMovies,
   getYear,
 })(Discovers);

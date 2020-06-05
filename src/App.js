@@ -21,8 +21,8 @@ const App = () => {
       <Router>
         <div className='App'>
           <Navbar />
-          <Menu />
           <div className='container bg-grey'>
+            <Menu />
             <Switch>
               <Route exact path='/' component={Landing} />
               <Route path='/movie/:id' component={Movie} />

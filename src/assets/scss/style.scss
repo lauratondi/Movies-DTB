@@ -14,24 +14,6 @@ body {
   min-height: calc(100vh-150px-40px);
 }
 
-// LANDING
-
-h1 {
-  font-weight: bold;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-}
-
 .navbar {
   // margin: 9px;
   padding: 30px;
@@ -51,6 +33,24 @@ img {
       color: $black-color;
     }
   }
+}
+
+// LANDING
+
+h1 {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
 }
 
 .landing {
@@ -195,6 +195,16 @@ internal-autofill-selected {
 .plot {
   grid-column: 1 / span 2;
   grid-row: 2;
+}
+
+// DISCOVER
+
+.form-year {
+  display: flex;
+  justify-content: center;
+  input {
+    width: 20%;
+  }
 }
 
 // FOOTER
