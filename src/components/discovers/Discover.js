@@ -27,10 +27,13 @@ const Discover = ({ getDetail, setLoading, loading, movie, match }) => {
           <h2>{movie.title}</h2>
           <ul>
             <li>
-              <b>Genres</b>
+              <b>Genres</b>{' '}
               {movie.genres &&
                 movie.genres.map((genre) => (
-                  <Fragment key={genre.id}>{genre.name}</Fragment>
+                  <span key={genre.id}>
+                    {genre.name}
+                    {', '}
+                  </span>
                 ))}
             </li>
             <li>
