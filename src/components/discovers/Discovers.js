@@ -1,15 +1,18 @@
 import React, { useState, Fragment } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import PropTypes from 'prop-types';
-import { getYear, clearMovies } from '../../actions/movieActions';
+import { getYear, setLoading, clearMovies } from '../../actions/movieActions';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DiscoverItem from '../discovers/DiscoverItem';
 
-const Discovers = ({ clearMovies, getYear, movies, loading }) => {
+const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
   const [year, setYear] = useState('');
+  const [page, setPage] = useState(1);
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setLoading();
     getYear(year);
     setYear('');
   };
@@ -18,10 +21,11 @@ const Discovers = ({ clearMovies, getYear, movies, loading }) => {
     setYear(e.target.value);
   };
 
-  const onClick = (e) => {
-    e.preventDefault();
-    getYear(year.page + 1);
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  //   setLoading();
+  //   getYear(setPage(page + 1));
+  // };
 
   if (loading) {
     return <Spinner />;
@@ -53,20 +57,27 @@ const Discovers = ({ clearMovies, getYear, movies, loading }) => {
             Clear{' '}
           </button>
         </div>
-        <div className='container-movies'>
-          {movies.total_results > 0 &&
-            movies.results.map((movie, index) => (
-              <DiscoverItem key={index} movie={movie} />
-            ))}
-        </div>
+        <InfiniteScroll
+          dataLength={movies.results.length}
+          next={getYear(year)}
+          hasMore={true}
+          loader={<h4>Loading...</h4>}
+        >
+          <div className='container-movies'>
+            {movies.total_results > 0 &&
+              movies.results.map((movie, index) => (
+                <DiscoverItem key={index} movie={movie} />
+              ))}
+          </div>
+        </InfiniteScroll>
 
-        {movies.total_results > 0 ? (
+        {/* {movies.total_results > 0 ? (
           <div className='load'>
             <button className='btn btn-primary' onClick={onClick}>
               Load more
             </button>
           </div>
-        ) : null}
+        ) : null} */}
       </Fragment>
     );
   }
@@ -75,6 +86,7 @@ const Discovers = ({ clearMovies, getYear, movies, loading }) => {
 Discovers.propTypes = {
   clearMovies: PropTypes.func.isRequired,
   getYear: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
   movies: PropTypes.object.isRequired,
   loading: PropTypes.bool,
 };
@@ -86,4 +98,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   clearMovies,
   getYear,
+  setLoading,
 })(Discovers);

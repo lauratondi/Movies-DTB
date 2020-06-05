@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  // searchMovies,
-  getMovies,
-  setLoading,
-  clearMovies,
-} from '../../actions/movieActions';
+import { getMovies, setLoading, clearMovies } from '../../actions/movieActions';
 
 const Search = ({ getMovies, setLoading, clearMovies }) => {
   useEffect(() => {
-    // searchMovies();
     clearMovies();
     // eslint-disable-next-line
   }, []);
