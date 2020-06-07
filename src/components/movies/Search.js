@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { getMovies, setLoading, clearMovies } from '../../actions/movieActions';
 
 const Search = ({ getMovies, setLoading, clearMovies }) => {
-  useEffect(() => {
-    clearMovies();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   clearMovies();
+  //   // eslint-disable-next-line
+  // }, []);
 
   const [text, setText] = useState('');
 

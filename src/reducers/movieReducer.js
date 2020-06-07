@@ -12,9 +12,11 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  // text: '',
-  movies: {},
+  movies: {
+    results: [],
+  },
   movie: {},
+
   loading: false,
 };
 

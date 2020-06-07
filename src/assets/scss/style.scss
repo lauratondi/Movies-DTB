@@ -236,3 +236,50 @@ footer {
     color: $light-color;
   }
 }
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 8px;
+    display: flex;
+    align-items: unset;
+
+    .fa-5x {
+      font-size: 3em;
+    }
+    h1 {
+      font-size: 21px;
+    }
+  }
+
+  .menu {
+    background-color: $black-color;
+    margin-top: -17px;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    li {
+      margin-bottom: 9px;
+      margin-left: 15px;
+      margin-top: 9px;
+    }
+  }
+
+  .search {
+    h1 {
+      font-size: x-large;
+    }
+  }
+
+  .container-movie {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-year {
+    input {
+      padding: 4px;
+    }
+  }
+}

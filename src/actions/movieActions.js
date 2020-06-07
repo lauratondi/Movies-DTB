@@ -33,8 +33,6 @@ export const getMovies = (text) => async (dispatch) => {
 export const getMovie = (id) => async (dispatch) => {
   setLoading();
 
-  console.log('Hi Movies');
-
   const res = await axios.get(
     `http://www.omdbapi.com/?i=${id}&apikey=${APIKey}&plot=full`
   );
@@ -63,7 +61,7 @@ export const getPopulars = (page) => async (dispatch) => {
   });
 };
 
-// GET MOVIE BY POPULARITY
+// GET SINGLE MOVIE
 export const getDetail = (id) => async (dispatch) => {
   setLoading();
   const res = await axios.get(
