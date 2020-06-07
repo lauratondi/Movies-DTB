@@ -166,8 +166,8 @@ internal-autofill-selected {
   display: grid;
   justify-content: center;
   margin-top: 65px;
-  margin-left: 14rem;
-  margin-right: 14rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
   grid-gap: 10px;
 
   b {
@@ -238,6 +238,9 @@ footer {
 }
 
 /* Mobile Styles */
+
+// @media (min-width: 481px) and (max-width: 767px)
+// @media (min-width: 320px) and (max-width: 480px)
 @media (max-width: 700px) {
   .navbar {
     padding: 8px;
@@ -273,8 +276,8 @@ footer {
   }
 
   .container-movie {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 
   .form-year {
