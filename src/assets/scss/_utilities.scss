@@ -25,3 +25,117 @@
     opacity: 0.7;
   }
 }
+
+.btn-secondary {
+  background-color: $grey-color;
+  color: $light-color;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// The dropdown wrapper (`<div>`)
+.dropup,
+.dropright,
+.dropdown,
+.dropleft {
+  position: relative;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+
+  // Generate the caret automatically
+}
+
+// The dropdown menu
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  list-style: none;
+
+  background-clip: padding-box;
+}
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// Just add .dropup after the standard .dropdown class and you're set.
+.dropup {
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+  }
+}
+
+.dropright {
+  .dropdown-menu {
+    top: 0;
+    right: auto;
+    left: 100%;
+    margin-top: 0;
+  }
+}
+
+.dropleft {
+  .dropdown-menu {
+    top: 0;
+    right: 100%;
+    left: auto;
+    margin-top: 0;
+  }
+}
+
+// When enabled Popper.js, reset basic dropdown position
+// stylelint-disable-next-line no-duplicate-selectors
+.dropdown-menu {
+  &[x-placement^='top'],
+  &[x-placement^='right'],
+  &[x-placement^='bottom'],
+  &[x-placement^='left'] {
+    right: auto;
+    bottom: auto;
+  }
+}
+
+// Links, buttons, and more within the dropdown menu
+//
+// `<button>`-specific styles are denoted with `// For <button>s`
+.dropdown-item {
+  display: block;
+  width: 100%; // For `<button>`s
+
+  text-align: inherit; // For `<button>`s
+
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  background-color: transparent; // For `<button>`s
+  border: 0; // For `<button>`s
+
+  // Prevent dropdown overflow if there's no padding
+  // See https://github.com/twbs/bootstrap/pull/27703
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+// Dropdown section headers
+.dropdown-header {
+  display: block;
+
+  margin-bottom: 0; // for use with heading elements
+
+  white-space: nowrap; // as with > li > a
+}
+
+// Dropdown text
+.dropdown-item-text {
+  display: block;
+}

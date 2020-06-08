@@ -9,8 +9,9 @@ import {
   GET_TOPRATED,
   GET_YEAR,
   GET_TVSHOWS,
-  GET_TVMOREP,
   GET_TVLESSP,
+  GET_TVNEW,
+  GET_TVOLD,
 } from '../actions/types';
 
 const initialState = {
@@ -27,7 +28,8 @@ export default (state = initialState, action) => {
     case GET_YEAR:
     case GET_TVSHOWS:
     case GET_TVLESSP:
-    case GET_TVMOREP:
+    case GET_TVNEW:
+    case GET_TVOLD:
       return {
         ...state,
         movies: action.payload,

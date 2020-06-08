@@ -9,8 +9,9 @@ import {
   GET_TOPRATED,
   GET_YEAR,
   GET_TVSHOWS,
-  GET_TVMOREP,
   GET_TVLESSP,
+  GET_TVNEW,
+  GET_TVOLD,
   CLEAR_MOVIES,
 } from './types';
 
@@ -110,24 +111,8 @@ export const getYear = (year, page) => async (dispatch) => {
   });
 };
 
-// GET TV SHOWS
+// GET TV SHOWS BY MOST POPULAR
 export const getTvshows = (page) => async (dispatch) => {
-  setLoading(true);
-  const res = await axios.get(
-    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=first_air_date.desc&page=${page}`
-  );
-
-  console.log(res.data);
-
-  dispatch({
-    type: GET_TVSHOWS,
-    payload: res.data,
-    loading: false,
-  });
-};
-
-// GET TV SHOWS BY MORE POPULAR
-export const getTvMoreP = (page) => async (dispatch) => {
   setLoading(true);
   const res = await axios.get(
     `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&page=${page}`
@@ -136,7 +121,7 @@ export const getTvMoreP = (page) => async (dispatch) => {
   console.log(res.data);
 
   dispatch({
-    type: GET_TVMOREP,
+    type: GET_TVSHOWS,
     payload: res.data,
     loading: false,
   });
@@ -153,6 +138,38 @@ export const getTvLessP = (page) => async (dispatch) => {
 
   dispatch({
     type: GET_TVLESSP,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET TV SHOWS BY NEWEST
+export const getTvNew = (page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=first_air_date.desc&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_TVNEW,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET TV SHOWS BY OLDEST
+export const getTvOld = (page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=first_air_date.asc&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_TVOLD,
     payload: res.data,
     loading: false,
   });
