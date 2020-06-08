@@ -37,14 +37,22 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
                 <b>Released:</b> {movie.Released}
               </li>
               <li>
+                <b>imdb Rating:</b> {movie.imdbRating}
+              </li>
+              <li>
                 <b>Language:</b> {movie.Language}
               </li>
               <li>
                 <b>Country:</b> {movie.Country}
               </li>
               <li>
-                <b>imdb Rating:</b> {movie.imdbRating}
+                <b>Type:</b> {movie.Type}
               </li>
+              {movie.totalSeasons && (
+                <li>
+                  <b>Total Seasons:</b> {movie.totalSeasons}
+                </li>
+              )}
               <li>
                 <b>Director:</b> {movie.Director}
               </li>
