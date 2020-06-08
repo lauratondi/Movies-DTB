@@ -30,7 +30,7 @@
   background-color: $grey-color;
   color: $light-color;
   border: none;
-  margin-left: 15px;
+  margin-top: 5px;
   cursor: pointer;
   &:hover {
     opacity: 0.7;
@@ -124,6 +124,7 @@
 
 .dropdown-menu.show {
   display: block;
+  margin-top: 10px;
 }
 
 // Dropdown section headers

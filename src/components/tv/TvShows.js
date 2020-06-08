@@ -9,7 +9,9 @@ import {
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import TvShowsItem from '../tv/TvShowsItem';
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+// import { DropdownButton, Dropdown } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const TvShows = ({
   getTvshows,
@@ -33,32 +35,37 @@ const TvShows = ({
   } else {
     return (
       <Fragment>
-        {/* <div className='sort-by'>
-          Sort by:
-          <button className='btn btn-secondary' onClick={() => getTvshows()}>
-            Most Popular
-          </button>
-          <button className='btn btn-secondary' onClick={() => getTvLessP()}>
-            Less Popular
-          </button>
-          <button className='btn btn-secondary' onClick={() => getTvNew()}>
-            Newest
-          </button>
-          <button className='btn btn-secondary' onClick={() => getTvOld()}>
-            Oldest
-          </button>
-        </div> */}
-        <DropdownButton id='dropdown-item-button' title='Sort by'>
-          <Dropdown.Item as='button' onClick={() => getTvshows()}>
+        <DropdownButton
+          id='dropdown-item-button'
+          title='Sort by'
+          className='sort-by'
+        >
+          <Dropdown.Item
+            as='button'
+            className='btn btn-secondary'
+            onClick={() => getTvshows()}
+          >
             Most Popular
           </Dropdown.Item>
-          <Dropdown.Item as='button' onClick={() => getTvLessP()}>
+          <Dropdown.Item
+            as='button'
+            className='btn btn-secondary'
+            onClick={() => getTvLessP()}
+          >
             Less Popular
           </Dropdown.Item>
-          <Dropdown.Item as='button' onClick={() => getTvNew()}>
+          <Dropdown.Item
+            as='button'
+            className='btn btn-secondary'
+            onClick={() => getTvNew()}
+          >
             Newest
           </Dropdown.Item>
-          <Dropdown.Item as='button' onClick={() => getTvOld()}>
+          <Dropdown.Item
+            as='button'
+            className='btn btn-secondary'
+            onClick={() => getTvOld()}
+          >
             Oldest
           </Dropdown.Item>
         </DropdownButton>
