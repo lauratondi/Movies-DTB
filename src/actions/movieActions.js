@@ -8,6 +8,7 @@ import {
   GET_DETAIL,
   GET_TOPRATED,
   GET_YEAR,
+  GET_TVSHOWS,
   CLEAR_MOVIES,
 } from './types';
 
@@ -102,6 +103,22 @@ export const getYear = (year, page) => async (dispatch) => {
 
   dispatch({
     type: GET_YEAR,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET TV
+export const getTvshows = (page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=first_air_date.desc&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_TVSHOWS,
     payload: res.data,
     loading: false,
   });

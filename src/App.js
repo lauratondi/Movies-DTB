@@ -14,6 +14,7 @@ import TopRated from './components/topRated/TopRated';
 import TopPage from './components/topRated/TopPage';
 import Discovers from './components/discovers/Discovers';
 import Discover from './components/discovers/Discover';
+import TvShows from './components/tv/TvShows';
 
 const App = () => {
   return (
@@ -28,10 +29,11 @@ const App = () => {
               <Route path='/movie/:id' component={Movie} />
               <Route exact path='/populars' component={Populars} />
               <Route exact path='/populars/:id' component={Popular} />
-              <Route exact path='/discover/' component={Discovers} />
-              <Route exact path='/discover/:id' component={Discover} />
               <Route exact path='/topRated' component={TopRated} />
               <Route exact path='/topRated/:id' component={TopPage} />
+              <Route exact path='/discover/' component={Discovers} />
+              <Route exact path='/discover/:id' component={Discover} />
+              <Route exact path='/tv/' component={TvShows} />
             </Switch>
           </div>
           <Footer />

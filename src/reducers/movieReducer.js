@@ -7,16 +7,13 @@ import {
   MOVIES_ERROR,
   CLEAR_MOVIES,
   GET_TOPRATED,
-  GET_DISCOVERS,
   GET_YEAR,
+  GET_TVSHOWS,
 } from '../actions/types';
 
 const initialState = {
-  movies: {
-    results: [],
-  },
+  movies: {},
   movie: {},
-
   loading: false,
 };
 
@@ -25,8 +22,8 @@ export default (state = initialState, action) => {
     case GET_MOVIES:
     case GET_POPULARS:
     case GET_TOPRATED:
-    case GET_DISCOVERS:
     case GET_YEAR:
+    case GET_TVSHOWS:
       return {
         ...state,
         movies: action.payload,

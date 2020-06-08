@@ -17,6 +17,10 @@ const Menu = () => {
           <i className='fas fa-gift fa-xs'></i>
           <Link to='/discover'> Discover</Link>
         </li>
+        <li>
+          <i className='fas fa-tv fa-xs'></i>
+          <Link to='/tv'>TV Shows</Link>
+        </li>
       </ul>
     </div>
   );
