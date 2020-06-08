@@ -9,6 +9,8 @@ import {
   GET_TOPRATED,
   GET_YEAR,
   GET_TVSHOWS,
+  GET_TVMOREP,
+  GET_TVLESSP,
   CLEAR_MOVIES,
 } from './types';
 
@@ -108,7 +110,7 @@ export const getYear = (year, page) => async (dispatch) => {
   });
 };
 
-// GET TV
+// GET TV SHOWS
 export const getTvshows = (page) => async (dispatch) => {
   setLoading(true);
   const res = await axios.get(
@@ -119,6 +121,38 @@ export const getTvshows = (page) => async (dispatch) => {
 
   dispatch({
     type: GET_TVSHOWS,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET TV SHOWS BY MORE POPULAR
+export const getTvMoreP = (page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_TVMOREP,
+    payload: res.data,
+    loading: false,
+  });
+};
+
+// GET TV SHOWS BY LESS POPULAR
+export const getTvLessP = (page) => async (dispatch) => {
+  setLoading(true);
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&sort_by=popularity.asc&page=${page}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_TVLESSP,
     payload: res.data,
     loading: false,
   });
