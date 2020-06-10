@@ -8,6 +8,7 @@ export const GET_TVSHOWS = 'GET_TVSHOWS';
 export const GET_TVLESSP = 'GET_TVLESSP';
 export const GET_TVNEW = 'GET_TVNEW';
 export const GET_TVOLD = 'GET_TVOLD';
+export const GET_TVDETAIL = 'GET_TVDETAIL';
 export const SET_LOADING = 'SET_LOADING';
 export const CLEAR_MOVIES = 'CLEAR_MOVIES';
 export const MOVIES_ERROR = 'MOVIES-ERROR';

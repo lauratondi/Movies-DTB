@@ -27,6 +27,8 @@ const TvShows = ({
   }, []);
 
   const onClick = (e) => {
+    e.preventDefault();
+    window.location.reload(false);
     getTvshows(movies.page + 1);
   };
 

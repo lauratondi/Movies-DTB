@@ -12,6 +12,7 @@ import {
   GET_TVLESSP,
   GET_TVNEW,
   GET_TVOLD,
+  GET_TVDETAIL,
   CLEAR_MOVIES,
 } from './types';
 
@@ -172,6 +173,22 @@ export const getTvOld = (page) => async (dispatch) => {
     type: GET_TVOLD,
     payload: res.data,
     loading: false,
+  });
+};
+
+// GET TV DETAIL
+export const getTvDetail = (tv_id) => async (dispatch) => {
+  setLoading();
+
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/tv/${tv_id}?api_key=${API_KEY}`
+  );
+
+  console.log(res.data);
+
+  dispatch({
+    type: GET_TVDETAIL,
+    payload: res.data,
   });
 };
 

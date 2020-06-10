@@ -12,6 +12,7 @@ import {
   GET_TVLESSP,
   GET_TVNEW,
   GET_TVOLD,
+  GET_TVDETAIL,
 } from '../actions/types';
 
 const initialState = {
@@ -37,6 +38,7 @@ export default (state = initialState, action) => {
       };
     case GET_MOVIE:
     case GET_DETAIL:
+    case GET_TVDETAIL:
       return {
         ...state,
         movie: action.payload,

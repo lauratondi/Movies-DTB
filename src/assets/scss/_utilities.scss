@@ -117,14 +117,16 @@
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background-color: transparent; // For `<button>`s
   border: 0; // For `<button>`s
-
+  margin-bottom: 14px;
   // Prevent dropdown overflow if there's no padding
   // See https://github.com/twbs/bootstrap/pull/27703
 }
 
 .dropdown-menu.show {
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
+  background-color: $black-color;
+  padding: 5px;
 }
 
 // Dropdown section headers

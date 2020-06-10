@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteScroll from 'react-infinite-scroller';
 import PropTypes from 'prop-types';
 import { getYear, setLoading, clearMovies } from '../../actions/movieActions';
 import { connect } from 'react-redux';
@@ -7,8 +7,17 @@ import Spinner from '../layout/Spinner';
 import DiscoverItem from '../discovers/DiscoverItem';
 
 const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
+  useEffect(() => {
+    clearMovies();
+    // eslint-disable-next-line
+  }, []);
+
   const [year, setYear] = useState('');
-  const [page, setPage] = useState('');
+  // const [page, setPage] = useState('');
+
+  // const fetchMoreData = () => {
+  //   setPage(page + 1);
+  // };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -21,13 +30,13 @@ const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
     setYear(e.target.value);
   };
 
-  const onClick = (e) => {
-    e.preventDefault();
-    // setLoading();
-    getYear(year);
-    getYear(page + 1);
-    setPage('');
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  //   // setLoading();
+  //   getYear(year);
+  //   getYear(page + 1);
+  //   setPage('');
+  // };
 
   if (loading) {
     return <Spinner />;
@@ -60,11 +69,13 @@ const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
             Clear{' '}
           </button>
         </div>
+
         {/* <InfiniteScroll
-          dataLength={movies.results.length}
-          next={getYear(year)}
+          pageStart={0}
+          loadMore={fetchMoreData}
           hasMore={true}
-          loader={<h4>Loading...</h4>}
+          loader={<div key={0}>Loading...</div>}
+          useWindow={false}
         > */}
         <div className='container-movies'>
           {movies.total_results > 0 &&
@@ -73,14 +84,6 @@ const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
             ))}
         </div>
         {/* </InfiniteScroll> */}
-
-        {movies.total_results > 0 && (
-          <div className='load'>
-            <button className='btn btn-primary' onClick={onClick}>
-              Load more
-            </button>
-          </div>
-        )}
       </Fragment>
     );
   }

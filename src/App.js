@@ -15,6 +15,7 @@ import TopPage from './components/topRated/TopPage';
 import Discovers from './components/discovers/Discovers';
 import Discover from './components/discovers/Discover';
 import TvShows from './components/tv/TvShows';
+import TvShow from './components/tv/TvShow';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
               <Route exact path='/discover/' component={Discovers} />
               <Route exact path='/discover/:id' component={Discover} />
               <Route exact path='/tv/' component={TvShows} />
+              <Route exact path='/tv/:id' component={TvShow} />
             </Switch>
           </div>
           <Footer />
