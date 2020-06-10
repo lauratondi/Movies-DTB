@@ -40,6 +40,18 @@ const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
               <b>Release:</b> {movie.first_air_date}
             </li>
             <li>
+              <b>Last episode:</b> {movie.last_air_date}
+            </li>
+            <li>
+              <b>Episode runtime:</b> {movie.episode_run_time} min.
+            </li>
+            <li>
+              <b>Number of seasons:</b> {movie.number_of_seasons}
+            </li>
+            <li>
+              <b>Number of episodes:</b> {movie.number_of_episodes}
+            </li>
+            <li>
               <b>Original title:</b> {movie.original_name}
             </li>
             <li>
@@ -47,6 +59,16 @@ const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
             </li>
             <li>
               <b>Vote average:</b> {movie.vote_average}
+            </li>
+            <li>
+              <b>Created by:</b>{' '}
+              {movie.created_by &&
+                movie.created_by.map((item) => (
+                  <span key={item.id}>
+                    {item.name}
+                    {', '}
+                  </span>
+                ))}
             </li>
           </ul>
         </div>
