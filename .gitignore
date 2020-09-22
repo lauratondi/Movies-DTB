@@ -8,10 +8,10 @@
 
 # testing
 /coverage
-APIKey.js
+# APIKey.js
 
 # production
-/build
+# /build
 
 /
 # misc
