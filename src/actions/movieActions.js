@@ -21,7 +21,7 @@ export const getMovies = (text) => async (dispatch) => {
   setLoading(true);
 
   const res = await axios.get(
-    `http://www.omdbapi.com/?s=${text}&apikey=${APIKey}`
+    `https://www.omdbapi.com/?s=${text}&apikey=${APIKey}`
   );
 
   console.log(res.data);
