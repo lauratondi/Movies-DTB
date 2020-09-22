@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getMovies, setLoading, clearMovies } from '../../actions/movieActions';
 
 const Search = ({ getMovies, setLoading, clearMovies }) => {
-  // useEffect(() => {
-  //   clearMovies();
-  //   // eslint-disable-next-line
-  // }, []);
-
   const [text, setText] = useState('');
 
   const onSubmit = (e) => {
@@ -55,7 +50,6 @@ const Search = ({ getMovies, setLoading, clearMovies }) => {
 };
 
 Search.proptype = {
-  // searchMovies: PropTypes.func.isRequired,
   getMovies: PropTypes.func.isRequired,
   setLoading: PropTypes.func.isRequired,
   clearMovies: PropTypes.func.isRequired,

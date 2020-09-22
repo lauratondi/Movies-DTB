@@ -9,7 +9,6 @@ import {
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import TvShowsItem from '../tv/TvShowsItem';
-// import { DropdownButton, Dropdown } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
@@ -28,7 +27,7 @@ const TvShows = ({
 
   const onClick = (e) => {
     e.preventDefault();
-    window.location.reload(false);
+    // window.location.reload(false);
     getTvshows(movies.page + 1);
   };
 

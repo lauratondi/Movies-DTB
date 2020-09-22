@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getDetail, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';

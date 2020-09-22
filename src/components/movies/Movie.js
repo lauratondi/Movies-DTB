@@ -1,7 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import MovieItem from './MovieItem';
 import { getMovie, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
 
@@ -18,7 +16,6 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
     return <Spinner />;
   } else {
     return (
-      // movie.Response === 'True' ? (
       <div className='container-movie'>
         <Fragment>
           <div className='poster'>

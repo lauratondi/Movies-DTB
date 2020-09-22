@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Search from '../movies/Search';
-import Menu from '../layout/Menu';
 import Movies from '../movies/Movies';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux';

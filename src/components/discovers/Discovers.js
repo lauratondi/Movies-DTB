@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react';
-import InfiniteScroll from 'react-infinite-scroller';
+// import InfiniteScroll from 'react-infinite-scroller';
 import PropTypes from 'prop-types';
 import { getYear, setLoading, clearMovies } from '../../actions/movieActions';
 import { connect } from 'react-redux';
@@ -30,13 +30,11 @@ const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
     setYear(e.target.value);
   };
 
-  // const onClick = (e) => {
-  //   e.preventDefault();
-  //   // setLoading();
-  //   getYear(year);
-  //   getYear(page + 1);
-  //   setPage('');
-  // };
+  const onClick = (e) => {
+    e.preventDefault();
+    // setLoading();
+    getYear(...year, movies.page + 1);
+  };
 
   if (loading) {
     return <Spinner />;
@@ -82,6 +80,13 @@ const Discovers = ({ clearMovies, getYear, setLoading, movies, loading }) => {
             movies.results.map((movie, index) => (
               <DiscoverItem key={index} movie={movie} />
             ))}
+        </div>
+        <div className='load'>
+          {movies.total_results && (
+            <button className='btn btn-primary' onClick={onClick}>
+              Load more
+            </button>
+          )}
         </div>
         {/* </InfiniteScroll> */}
       </Fragment>

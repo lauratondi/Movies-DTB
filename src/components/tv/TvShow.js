@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getTvDetail, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
@@ -42,6 +41,11 @@ const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
             <li>
               <b>Last episode:</b> {movie.last_air_date}
             </li>
+            {movie.next_episode_to_air && (
+              <li>
+                <b>Next episode:</b> {movie.next_episode_to_air}
+              </li>
+            )}
             <li>
               <b>Episode runtime:</b> {movie.episode_run_time} min.
             </li>
@@ -61,9 +65,22 @@ const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
               <b>Vote average:</b> {movie.vote_average}
             </li>
             <li>
+              <b>Status:</b> {movie.status}
+            </li>
+            <li>
               <b>Created by:</b>{' '}
               {movie.created_by &&
                 movie.created_by.map((item) => (
+                  <span key={item.id}>
+                    {item.name}
+                    {', '}
+                  </span>
+                ))}
+            </li>
+            <li>
+              <b>Production companies:</b>{' '}
+              {movie.production_companies &&
+                movie.production_companies.map((item) => (
                   <span key={item.id}>
                     {item.name}
                     {', '}
