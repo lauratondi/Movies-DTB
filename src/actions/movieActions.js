@@ -38,7 +38,7 @@ export const getMovie = (id) => async (dispatch) => {
   setLoading();
 
   const res = await axios.get(
-    `http://www.omdbapi.com/?i=${id}&apikey=${APIKey}&plot=full`
+    `https://www.omdbapi.com/?i=${id}&apikey=${APIKey}&plot=full`
   );
 
   console.log(res.data);
