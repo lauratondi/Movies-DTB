@@ -5,13 +5,16 @@
 /.pnp
 .pnp.js
 
+/APIKey.js
+
 
 # testing
 /coverage
-# APIKey.js
+
+
 
 # production
-# /build
+/build
 
 /
 # misc
