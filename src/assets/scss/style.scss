@@ -203,7 +203,7 @@ internal-autofill-selected {
   display: flex;
   justify-content: center;
   input {
-    width: 20%;
+    width: 30%;
   }
 }
 
@@ -247,7 +247,7 @@ footer {
 
 // @media (min-width: 481px) and (max-width: 767px)
 // @media (min-width: 320px) and (max-width: 480px)
-@media (max-width: 700px) {
+@media (max-width: 576px) {
   .navbar {
     padding: 8px;
     display: flex;
@@ -288,12 +288,13 @@ footer {
 
   .form-year {
     input {
-      padding: 4px;
+      font-size: 15px;
+      width: 30%;
     }
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 480px) {
   .menu {
     i {
       display: none;
@@ -303,16 +304,15 @@ footer {
     }
   }
 
-  .form-year {
-    input {
-      font-size: 15px;
-      width: 30%;
-    }
-  }
   .poster {
     display: none;
   }
   .info {
-    grid-column: 1;
+    grid-column: 1 / span 2;
+  }
+  .form-year {
+    input {
+      font-size: 13px;
+    }
   }
 }
