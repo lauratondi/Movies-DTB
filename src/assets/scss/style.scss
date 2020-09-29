@@ -292,3 +292,27 @@ footer {
     }
   }
 }
+
+@media (max-width: 700px) {
+  .menu {
+    i {
+      display: none;
+    }
+    li {
+      font-size: 15px;
+    }
+  }
+
+  .form-year {
+    input {
+      font-size: 15px;
+      width: 30%;
+    }
+  }
+  .poster {
+    display: none;
+  }
+  .info {
+    grid-column: 1;
+  }
+}

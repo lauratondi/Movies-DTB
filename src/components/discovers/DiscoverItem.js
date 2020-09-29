@@ -18,7 +18,7 @@ const DiscoverItem = ({ movie }) => {
         <h5>{movie.title}</h5>
       </div>
       <div className='year'>
-        <p>{movie.release_date.trim().split('-')[0]}</p>
+        <p>{movie.release_date.split('-')[0]}</p>
       </div>
     </div>
   );

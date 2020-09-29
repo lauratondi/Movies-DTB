@@ -18,7 +18,7 @@ const TvShowsItem = ({ movie }) => {
         <h5>{movie.name}</h5>
       </div>
       <div className='year'>
-        <p>{movie.first_air_date.trim().split('-')[0]}</p>
+        <p>{movie.first_air_date.split('-')[0]}</p>
       </div>
     </div>
   );
