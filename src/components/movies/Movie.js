@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getMovie, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
-
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
@@ -12,6 +12,7 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
     // eslint-disable-next-line
   }, []);
 
+  let history = useHistory();
   if (loading) {
     return <Spinner />;
   } else {
@@ -69,6 +70,17 @@ const Movie = ({ getMovie, setLoading, loading, movie, match }) => {
             <p>{movie.Plot}</p>
           </div>
         </Fragment>
+        <div className='backBtn'>
+          <button
+            type='button'
+            className='btn-primary back'
+            onClick={() => history.goBack()}
+          >
+            <i className='fas fa-arrow-circle-left fa-2x'></i>
+            <br />
+            Back
+          </button>
+        </div>
       </div>
     );
   }

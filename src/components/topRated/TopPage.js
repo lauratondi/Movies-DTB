@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getDetail, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 const TopPage = ({ getDetail, setLoading, loading, movie, match }) => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const TopPage = ({ getDetail, setLoading, loading, movie, match }) => {
     // eslint-disable-next-line
   }, []);
 
+  let history = useHistory();
   if (loading) {
     return <Spinner />;
   } else {
@@ -50,14 +52,27 @@ const TopPage = ({ getDetail, setLoading, loading, movie, match }) => {
             <li>
               <b>Vote average:</b> {movie.vote_average}
             </li>
-            <li>
-              <b>Tagline:</b> {movie.tagline}
-            </li>
+            {movie.tagline && (
+              <li>
+                <b>Tagline:</b> {movie.tagline}
+              </li>
+            )}
           </ul>
         </div>
         <div className='plot bg-grey'>
           <b>Overview:</b>
           <p>{movie.overview}</p>
+        </div>
+        <div className='backBtn'>
+          <button
+            type='button'
+            className='btn-primary back'
+            onClick={() => history.goBack()}
+          >
+            <i className='fas fa-arrow-circle-left fa-2x'></i>
+            <br />
+            Back
+          </button>
         </div>
       </div>
     );

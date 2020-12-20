@@ -214,6 +214,7 @@ internal-autofill-selected {
 .sort-by {
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
 }
 // FOOTER
 
@@ -284,8 +285,8 @@ footer {
   }
 
   .container-movie {
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   .poster {

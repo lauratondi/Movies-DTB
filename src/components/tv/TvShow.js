@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getTvDetail, setLoading } from '../../actions/movieActions';
 import Spinner from '../layout/Spinner';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
     // eslint-disable-next-line
   }, []);
 
+  let history = useHistory();
   if (loading) {
     return <Spinner />;
   } else {
@@ -92,6 +94,17 @@ const TvShow = ({ getTvDetail, setLoading, loading, movie, match }) => {
         <div className='plot bg-grey'>
           <b>Overview:</b>
           <p>{movie.overview}</p>
+        </div>
+        <div className='backBtn'>
+          <button
+            type='button'
+            className='btn-primary back'
+            onClick={() => history.goBack()}
+          >
+            <i className='fas fa-arrow-circle-left fa-2x'></i>
+            <br />
+            Back
+          </button>
         </div>
       </div>
     );
