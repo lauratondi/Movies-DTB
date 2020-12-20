@@ -2,10 +2,11 @@
 
 # dependencies
 /node_modules
+
 /.pnp
 .pnp.js
 
-# APIKey.js
+APIKey.js
 
 
 # testing
