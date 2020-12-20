@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { APIKey, API_KEY } from './APIKey';
+import { APIKey, API_KEY } from '../APIKey';
 import {
   SET_LOADING,
   GET_MOVIES,
