@@ -20,8 +20,10 @@ body {
   display: flex;
   align-items: center;
 
-  h1 {
-    font-size: 38px;
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
   }
 
   a {
@@ -286,6 +288,21 @@ footer {
     margin-right: 5rem;
   }
 
+  .poster {
+    display: none;
+  }
+  .info {
+    grid-column: 1 / span 4;
+  }
+  .plot {
+    grid-column: 1 / span 4;
+  }
+  .form-year {
+    input {
+      font-size: 13px;
+    }
+  }
+
   .form-year {
     input {
       font-size: 15px;
@@ -301,18 +318,6 @@ footer {
     }
     li {
       font-size: 15px;
-    }
-  }
-
-  .poster {
-    display: none;
-  }
-  .info {
-    grid-column: 1 / span 2;
-  }
-  .form-year {
-    input {
-      font-size: 13px;
     }
   }
 }
