@@ -10,9 +10,8 @@ Create a <i>ApiKey.js</i> file in the src directory and add your API key for the
 
 In the project directory, you can run:
 
-<i>npm run dev</i> <br/><br/>
+<i>npm run start</i> <br/><br/>
 
-Front-end and Back-end will run together.
 
 Open http://localhost:3000 to view it in the browser. </br>
 
