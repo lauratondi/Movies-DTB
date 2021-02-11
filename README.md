@@ -14,12 +14,12 @@ In the project directory, you can run:
 
 Front-end and Back-end will run together.
 
-Open http://localhost:3000 to view it in the browser.
+Open http://localhost:3000 to view it in the browser. </br>
 
 <b>Technologies:</b>
 
-React | Redux | SASS | HTML | RestApi from http://www.omdbapi.com/ and https://www.themoviedb.org/.
+React | Redux | SASS | HTML | RestApi from http://www.omdbapi.com/ and https://www.themoviedb.org/.</br>
 
-<b>About the project</b> <br/><br/> Movies search database built with React functional components, Redux for state management(actions, reducers), Async/Await, TMDb and OMDB API, featuring different search filters. Tested with Postman and deployed to Netlify.
+<b>About the project:</b> <br/><br/> Movies search database built with React functional components, Redux for state management(actions, reducers), Async/Await, TMDb and OMDB API, featuring different search filters. Tested with Postman and deployed to Netlify.</br>
 
-<b>Issues to be fixed</b> There is a little bug that sometimes crashes the app when clicling on the Discover menu. If you come back to the Home Page and you reload the browser you should be able to start all over again the tour on the website.
+<b>Issues to be fixed:</b><br/><br/> There is a little bug that sometimes crashes the app when clicling on the Discover menu. If you come back to the Home Page and you reload the browser you should be able to start all over again the tour on the website.
