@@ -17,7 +17,7 @@ Open http://localhost:3000 to view it in the browser. </br>
 
 <b>Technologies:</b>
 
-React | Redux | SASS | HTML | RestApi from http://www.omdbapi.com/ and https://www.themoviedb.org/.</br>
+React | Redux | SASS | HTML | Axios | RestApi from http://www.omdbapi.com/ and https://www.themoviedb.org/.</br>
 
 <b>About the project:</b> <br/><br/> Movies search database connected to the TMDb and  OMDB API, built with React functional components and React Hooks, Redux for state management(store, actions, reducers), Async/Await, featuring different search filters. Tested with Postman and deployed to Netlify.</br>
 
