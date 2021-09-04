@@ -2,15 +2,15 @@
 
 <b>Instructions:</b> To run the application, you need to install the dependencies by running the following command:
 
-<i>npm install</i> <br/><br/>
+<i>`npm install`</i> <br/><br/>
 
 Create a <i>ApiKey.js</i> file in the src directory and add your API key for the TMDb and OMDB api:
 
-<i>module.exports = { API_KEY: 'yourKey', APIKey: 'yourKey }</i> <br/><br/>
+<i>`module.exports = { API_KEY: 'yourKey', APIKey: 'yourKey' }`</i> <br/><br/>
 
 In the project directory, you can run:
 
-<i>npm run start</i> <br/><br/>
+<i>`npm run start`</i> <br/><br/>
 
 
 Open http://localhost:3000 to view it in the browser. </br>
